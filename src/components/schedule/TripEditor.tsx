@@ -146,7 +146,9 @@ export function TripEditor({
                       />
                       <span className="font-semibold">
                         {kid.name}
-                        {kid.short === "A" ? " (A)" : ""}
+                        {kid.short && kid.short !== kid.name
+                          ? ` (${kid.short})`
+                          : ""}
                       </span>
                     </label>
                   );
