@@ -22,14 +22,15 @@ function LoginForm() {
       email,
       password,
       redirect: false,
+      callbackUrl,
     });
     setPending(false);
     if (res?.error) {
       setError("Sign-in failed — check email/password");
       return;
     }
-    router.push(callbackUrl);
-    router.refresh();
+    // Prefer hard navigation so middleware sees the new session cookie
+    window.location.assign(callbackUrl.startsWith("/") ? callbackUrl : "/week");
   }
 
   return (
