@@ -68,7 +68,8 @@ export function buildSchedulePayload(args: {
 }): ScheduleData {
   return {
     source: "database",
-    schoolYearLabel: "Fall 2026 (persisted)",
+    schoolYearLabel:
+      "Fall 2026 / school year 2026–2027 (Google Sheet tab '2027')",
     families: args.families.map((f) => ({
       id: f.id,
       name: f.name,
