@@ -17,9 +17,9 @@ const body = Nunito_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Carpool — Schedule UI Explore",
+  title: "Carpool — Schedule",
   description:
-    "Side-by-side schedule UI prototypes for the Carpool project (mock data only).",
+    "Week + Agenda hybrid schedule for the Carpool project (mock data only).",
 };
 
 export default function RootLayout({

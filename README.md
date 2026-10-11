@@ -2,29 +2,29 @@
 
 School carpool coordination for a small family group.
 
-## Schedule UI exploration (this branch)
+## Schedule hybrid (this branch)
 
-Throwaway prototypes to compare four schedule surfaces against the real sample Google Sheet. **No auth, database, or SMS** here.
+**Week + Agenda** is the main schedule surface (exploration winner). Mock data only — **no auth, database, or SMS** in this PR.
 
 ### Run locally
 
 ```bash
 npm install
 npm run dev
-# or production-style:
-# npm run build && npm run start
+# or: npm run build && npm run start
 ```
 
-Open [http://localhost:3000/explore](http://localhost:3000/explore).
+Open [http://localhost:3000/week](http://localhost:3000/week) (home redirects here).
 
-| Route | Concept |
-|-------|---------|
-| `/explore` | Chooser |
-| `/explore/week` | Week calendar |
-| `/explore/agenda` | Agenda / list |
-| `/explore/drivers` | Driver-first board |
-| `/explore/table` | Edit-heavy table |
+| Route | Role |
+|-------|------|
+| `/` | Redirects to `/week` |
+| `/week` | Primary week calendar |
+| `/agenda` | Secondary agenda / list |
+| `/explore` | Archive chooser; C/D reference |
+| `/explore/drivers` | Driver board (reference) |
+| `/explore/table` | Edit-heavy table (reference) |
 
-Edits (driver, riders, status) persist in `localStorage` so you can switch concepts and compare.
+Week and Agenda share one trip editor; edits persist in `localStorage`.
 
-Sample data is normalized from the shared sheet into `src/lib/mock-schedule.json`.
+Sample data: `src/lib/mock-schedule.json` (from the shared Google Sheet).
