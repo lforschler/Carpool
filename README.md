@@ -18,9 +18,16 @@ Copy `.env.example` → `.env` (and/or `.env.local`):
 
 | Variable | Required | Purpose |
 |----------|----------|---------|
-| `DATABASE_URL` | Yes | Postgres URL (Neon/Supabase cloud, or local Postgres) |
+| `DATABASE_URL` | Yes | Postgres URL (Neon/Supabase/Prisma cloud, or local Postgres) |
 | `AUTH_SECRET` | Yes | `openssl rand -base64 32` |
-| `AUTH_URL` | Yes locally | e.g. `http://localhost:3000` |
+| `AUTH_URL` | Yes | e.g. `http://localhost:3000` or the Vercel URL |
+| `AUTH_TRUST_HOST` | On Vercel | `true` |
+| `NEXT_PUBLIC_APP_URL` | On Vercel | Same as public site URL |
+
+### Hosted (Vercel)
+
+Production: **https://carpool-carpool4.vercel.app/login**  
+GitHub `lforschler/Carpool` is linked to Vercel project `carpool` (team `carpool4`) — pushes/PRs deploy automatically.
 
 ### Cloud Postgres (recommended)
 
