@@ -43,7 +43,7 @@ export default function DriversExplorePage() {
   return (
     <ExploreShell title="Driver-first board" concept="/explore/drivers">
       <div className="mb-3 sm:mb-4">
-        <h2 className="font-[family-name:var(--font-display)] text-xl tracking-tight sm:text-2xl">
+        <h2 className="font-[family-name:var(--font-display)] text-2xl tracking-tight sm:text-3xl">
           Who’s covering Oct 5–16
         </h2>
         <p className="text-sm text-[var(--muted)]">
@@ -61,14 +61,18 @@ export default function DriversExplorePage() {
           {columns.map((col, i) => (
             <section
               key={col.driver?.id ?? "unassigned"}
-              className="animate-rise flex max-h-[70dvh] w-[min(78vw,17.5rem)] shrink-0 snap-center flex-col rounded-2xl border border-[var(--line)] bg-white/85 p-3 sm:w-[min(85vw,18rem)] sm:max-h-none sm:snap-none"
+              className={`animate-rise flex max-h-[70dvh] w-[min(78vw,17.5rem)] shrink-0 snap-center flex-col rounded-[1.35rem] border border-white/70 p-3 shadow-[0_14px_30px_-22px_rgba(20,35,31,0.45)] sm:w-[min(85vw,18rem)] sm:max-h-none sm:snap-none ${
+                col.driver
+                  ? "bg-[linear-gradient(165deg,#fffaf3,#e7f4ef)]"
+                  : "bg-[linear-gradient(165deg,#fff1e4,#ffe7c2)]"
+              }`}
               style={{ animationDelay: `${i * 45}ms` }}
             >
-              <header className="mb-3 shrink-0 border-b border-[var(--line)] pb-2">
-                <h3 className="font-[family-name:var(--font-display)] text-lg">
+              <header className="mb-3 shrink-0 border-b border-[color-mix(in_oklab,var(--line)_70%,transparent)] pb-2">
+                <h3 className="font-[family-name:var(--font-display)] text-xl tracking-tight">
                   {col.driver?.name ?? "Unassigned"}
                 </h3>
-                <p className="text-xs text-[var(--muted)]">
+                <p className="text-xs font-semibold text-[var(--muted)]">
                   {col.trips.length} trip{col.trips.length === 1 ? "" : "s"}
                 </p>
               </header>
@@ -83,7 +87,7 @@ export default function DriversExplorePage() {
                   return (
                     <article
                       key={trip.id}
-                      className="rounded-xl border border-[var(--line)] bg-[var(--bg)] p-3"
+                      className="rounded-xl border border-white/80 bg-white/75 p-3 shadow-[0_8px_18px_-16px_rgba(20,35,31,0.45)]"
                     >
                       <button
                         type="button"

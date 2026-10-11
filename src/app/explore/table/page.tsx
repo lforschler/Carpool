@@ -44,7 +44,7 @@ export default function TableExplorePage() {
     <ExploreShell title="Edit-heavy table" concept="/explore/table">
       <div className="mb-3 flex flex-col gap-3 sm:mb-4 sm:flex-row sm:flex-wrap sm:items-end sm:justify-between">
         <div>
-          <h2 className="font-[family-name:var(--font-display)] text-xl tracking-tight sm:text-2xl">
+          <h2 className="font-[family-name:var(--font-display)] text-2xl tracking-tight sm:text-3xl">
             Trip spreadsheet
           </h2>
           <p className="text-sm text-[var(--muted)]">
@@ -60,10 +60,10 @@ export default function TableExplorePage() {
           <button
             type="button"
             onClick={() => setFilter("oct")}
-            className={`min-h-11 rounded-md px-3 py-2 font-medium touch-manipulation ${
+            className={`min-h-11 rounded-xl px-3 py-2 font-semibold touch-manipulation ${
               filter === "oct"
-                ? "bg-[var(--accent)] text-white"
-                : "border border-[var(--line)] bg-white"
+                ? "bg-[var(--accent)] text-white shadow-[0_8px_18px_-12px_rgba(11,95,82,0.85)]"
+                : "border border-white/70 bg-white/80"
             }`}
           >
             October
@@ -71,10 +71,10 @@ export default function TableExplorePage() {
           <button
             type="button"
             onClick={() => setFilter("all")}
-            className={`min-h-11 rounded-md px-3 py-2 font-medium touch-manipulation ${
+            className={`min-h-11 rounded-xl px-3 py-2 font-semibold touch-manipulation ${
               filter === "all"
-                ? "bg-[var(--accent)] text-white"
-                : "border border-[var(--line)] bg-white"
+                ? "bg-[var(--accent)] text-white shadow-[0_8px_18px_-12px_rgba(11,95,82,0.85)]"
+                : "border border-white/70 bg-white/80"
             }`}
           >
             All weeks
@@ -90,19 +90,29 @@ export default function TableExplorePage() {
           const seatsLeft = trip.noSchool
             ? "—"
             : Math.max(0, capacity - trip.riderIds.length);
+          const dirChip = trip.direction === "AM" ? "chip-am" : "chip-pm";
           return (
             <article
               key={trip.id}
-              className="animate-fade rounded-2xl border border-[var(--line)] bg-white p-3"
+              className="panel animate-fade rounded-[1.35rem] p-3.5"
             >
               <div className="flex items-start justify-between gap-2">
                 <div>
-                  <p className="text-sm font-semibold">
-                    {formatDay(trip.date)} · {trip.direction}
+                  <div className="flex items-center gap-2">
+                    <span
+                      className={`rounded-md px-1.5 py-0.5 text-[10px] font-extrabold uppercase tracking-[0.12em] ${dirChip}`}
+                    >
+                      {trip.direction}
+                    </span>
+                    <p className="font-[family-name:var(--font-display)] text-base tracking-tight">
+                      {formatDay(trip.date)}
+                    </p>
+                  </div>
+                  <p className="mt-0.5 text-xs font-semibold text-[var(--muted)]">
+                    {trip.time}
                   </p>
-                  <p className="text-xs text-[var(--muted)]">{trip.time}</p>
                 </div>
-                <span className="text-[10px] uppercase tracking-wide text-[var(--muted)]">
+                <span className="rounded-md bg-white/70 px-1.5 py-0.5 text-[10px] font-bold uppercase tracking-wide text-[var(--muted)]">
                   {seatsLeft === "—" ? "n/a" : `${seatsLeft} seats`}
                 </span>
               </div>
@@ -134,12 +144,12 @@ export default function TableExplorePage() {
                   <button
                     type="button"
                     onClick={() => setSelectedId(trip.id)}
-                    className="w-full rounded-md border border-[var(--line)] bg-[var(--surface)] px-3 py-2.5 text-left text-sm touch-manipulation"
+                    className="w-full rounded-xl border border-[var(--accent-soft)] bg-[var(--accent-soft)]/70 px-3 py-2.5 text-left text-sm touch-manipulation"
                   >
-                    <span className="block text-xs text-[var(--muted)]">
+                    <span className="block text-xs font-semibold text-[var(--muted)]">
                       Riders · tap to edit
                     </span>
-                    <span className="font-medium text-[var(--accent)]">
+                    <span className="font-bold text-[var(--accent-deep)]">
                       {trip.riderIds
                         .map((id) => kidName(data.kids, id))
                         .join(", ") || "None"}
@@ -176,9 +186,9 @@ export default function TableExplorePage() {
       </div>
 
       {/* Desktop table */}
-      <div className="animate-fade hidden overflow-x-auto rounded-2xl border border-[var(--line)] bg-white sm:block">
+      <div className="animate-fade hidden overflow-x-auto rounded-[1.35rem] border border-white/70 bg-[color-mix(in_oklab,var(--paper)_92%,white)] shadow-[0_14px_30px_-22px_rgba(20,35,31,0.45)] sm:block">
         <table className="min-w-[48rem] w-full border-collapse text-left text-sm">
-          <thead className="bg-[var(--surface)] text-xs uppercase tracking-wide text-[var(--muted)]">
+          <thead className="bg-[linear-gradient(90deg,var(--accent-soft),var(--am-soft))] text-xs font-extrabold uppercase tracking-wide text-[var(--accent-deep)]">
             <tr>
               <th className="px-3 py-2 font-medium">Date</th>
               <th className="px-3 py-2 font-medium">Dir</th>

@@ -48,7 +48,7 @@ export default function AgendaExplorePage() {
   return (
     <ExploreShell title="Agenda / list" concept="/explore/agenda">
       <div className="mb-4 max-w-2xl sm:mb-5">
-        <h2 className="font-[family-name:var(--font-display)] text-xl tracking-tight sm:text-2xl">
+        <h2 className="font-[family-name:var(--font-display)] text-2xl tracking-tight sm:text-3xl">
           Upcoming trips
         </h2>
         <p className="text-sm text-[var(--muted)]">
@@ -63,24 +63,28 @@ export default function AgendaExplorePage() {
             className="animate-rise"
             style={{ animationDelay: `${gi * 50}ms` }}
           >
-            <h3 className="sticky top-[3.25rem] z-10 -mx-1 mb-2 bg-[color-mix(in_oklab,var(--bg)_92%,white)] px-1 py-1.5 font-[family-name:var(--font-display)] text-base backdrop-blur-sm sm:static sm:bg-transparent sm:text-lg sm:backdrop-blur-none">
+            <h3 className="sticky top-[3.25rem] z-10 -mx-1 mb-2 bg-[color-mix(in_oklab,var(--paper)_80%,transparent)] px-1 py-1.5 font-[family-name:var(--font-display)] text-lg tracking-tight backdrop-blur-sm sm:static sm:bg-transparent sm:text-xl sm:backdrop-blur-none">
               {label}
             </h3>
-            <ul className="divide-y divide-[var(--line)] overflow-hidden rounded-2xl border border-[var(--line)] bg-white">
+            <ul className="divide-y divide-[color-mix(in_oklab,var(--line)_70%,transparent)] overflow-hidden rounded-[1.35rem] border border-white/70 bg-[color-mix(in_oklab,var(--paper)_90%,white)] shadow-[0_12px_28px_-22px_rgba(20,35,31,0.45)]">
               {list.map((trip) => {
                 const out = exclusionNote(trip, data.kids);
+                const dirChip = trip.direction === "AM" ? "chip-am" : "chip-pm";
                 return (
                   <li key={trip.id}>
                     <button
                       type="button"
                       onClick={() => setSelectedId(trip.id)}
-                      className="flex w-full touch-manipulation flex-col gap-1.5 px-3 py-3.5 text-left active:bg-[var(--surface)] sm:flex-row sm:items-center sm:justify-between sm:px-4 sm:py-3 sm:hover:bg-[var(--surface)]"
+                      className="flex w-full touch-manipulation flex-col gap-1.5 px-3 py-3.5 text-left active:bg-[var(--accent-soft)]/40 sm:flex-row sm:items-center sm:justify-between sm:px-4 sm:py-3 sm:hover:bg-[var(--accent-soft)]/30"
                     >
                       <div className="min-w-0">
-                        <div className="flex flex-wrap items-baseline gap-x-2 gap-y-0.5">
-                          <p className="text-sm font-semibold">
-                            {trip.direction} · {trip.time}
-                          </p>
+                        <div className="flex flex-wrap items-center gap-x-2 gap-y-1">
+                          <span
+                            className={`rounded-md px-1.5 py-0.5 text-[10px] font-extrabold uppercase tracking-[0.12em] ${dirChip}`}
+                          >
+                            {trip.direction}
+                          </span>
+                          <p className="text-sm font-bold">{trip.time}</p>
                           <span className="text-xs text-[var(--muted)] sm:text-sm sm:font-normal">
                             {formatDay(trip.date)}
                           </span>
@@ -88,7 +92,7 @@ export default function AgendaExplorePage() {
                             {statusLabel(trip.status)}
                           </span>
                         </div>
-                        <p className="mt-0.5 text-sm">
+                        <p className="mt-1 font-[family-name:var(--font-display)] text-[15px] tracking-tight">
                           {trip.noSchool
                             ? "No school"
                             : driverName(data.drivers, trip.driverId)}
@@ -98,13 +102,13 @@ export default function AgendaExplorePage() {
                             {trip.riderIds.map((id) => (
                               <span
                                 key={id}
-                                className="rounded-md bg-[var(--accent-soft)] px-1.5 py-0.5 text-[11px] text-[var(--accent)]"
+                                className="rounded-md bg-[var(--accent-soft)] px-1.5 py-0.5 text-[11px] font-semibold text-[var(--accent-deep)]"
                               >
                                 {kidName(data.kids, id)}
                               </span>
                             ))}
                             {out && (
-                              <span className="rounded-md bg-[var(--warn-soft)] px-1.5 py-0.5 text-[11px] text-[var(--warn)]">
+                              <span className="rounded-md bg-[var(--warn-soft)] px-1.5 py-0.5 text-[11px] font-bold text-[var(--warn)]">
                                 {out}
                               </span>
                             )}

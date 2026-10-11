@@ -37,7 +37,7 @@ export default function WeekExplorePage() {
     <ExploreShell title="Week calendar" concept="/explore/week">
       <div className="mb-3 flex flex-col gap-3 sm:mb-4 sm:flex-row sm:flex-wrap sm:items-end sm:justify-between">
         <div className="min-w-0">
-          <h2 className="font-[family-name:var(--font-display)] text-xl tracking-tight sm:text-2xl">
+          <h2 className="font-[family-name:var(--font-display)] text-2xl tracking-tight sm:text-3xl">
             Week of {formatDay(weekStart)}
           </h2>
           <p className="text-sm text-[var(--muted)]">
@@ -50,21 +50,21 @@ export default function WeekExplorePage() {
         <div className="grid grid-cols-3 gap-2 sm:flex">
           <button
             type="button"
-            className="min-h-11 rounded-lg border border-[var(--line)] bg-white px-3 py-2 text-sm font-medium touch-manipulation"
+            className="min-h-11 rounded-xl border border-white/70 bg-white/80 px-3 py-2 text-sm font-semibold shadow-[0_8px_18px_-16px_rgba(20,35,31,0.5)] touch-manipulation"
             onClick={() => setWeekStart(addDays(weekStart, -7))}
           >
             ← Prev
           </button>
           <button
             type="button"
-            className="min-h-11 rounded-lg border border-[var(--line)] bg-white px-3 py-2 text-sm font-medium touch-manipulation"
+            className="min-h-11 rounded-xl bg-[var(--accent)] px-3 py-2 text-sm font-semibold text-white shadow-[0_8px_18px_-12px_rgba(11,95,82,0.85)] touch-manipulation"
             onClick={() => setWeekStart(startOfWeekMonday("2026-10-12"))}
           >
             Sample
           </button>
           <button
             type="button"
-            className="min-h-11 rounded-lg border border-[var(--line)] bg-white px-3 py-2 text-sm font-medium touch-manipulation"
+            className="min-h-11 rounded-xl border border-white/70 bg-white/80 px-3 py-2 text-sm font-semibold shadow-[0_8px_18px_-16px_rgba(20,35,31,0.5)] touch-manipulation"
             onClick={() => setWeekStart(addDays(weekStart, 7))}
           >
             Next →
@@ -79,14 +79,16 @@ export default function WeekExplorePage() {
           return (
             <section
               key={d}
-              className="animate-rise w-[min(82vw,20rem)] shrink-0 snap-center rounded-2xl border border-[var(--line)] bg-white/80 p-3 max-sm:snap-center sm:w-auto sm:snap-none"
+              className="panel animate-rise w-[min(82vw,20rem)] shrink-0 snap-center rounded-[1.35rem] p-3 max-sm:snap-center sm:w-auto sm:snap-none"
               style={{ animationDelay: `${i * 40}ms` }}
             >
-              <header className="mb-2 border-b border-[var(--line)] pb-2">
-                <p className="text-xs uppercase tracking-wide text-[var(--muted)]">
+              <header className="mb-2 border-b border-[color-mix(in_oklab,var(--line)_70%,transparent)] pb-2">
+                <p className="text-[11px] font-extrabold uppercase tracking-[0.16em] text-[var(--accent)]">
                   {formatWeekday(d)}
                 </p>
-                <p className="font-medium">{formatDay(d)}</p>
+                <p className="font-[family-name:var(--font-display)] text-lg tracking-tight">
+                  {formatDay(d)}
+                </p>
               </header>
               <div className="space-y-2">
                 {dayTrips.length ? (

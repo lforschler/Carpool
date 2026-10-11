@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Fraunces, Source_Sans_3 } from "next/font/google";
+import { Fraunces, Nunito_Sans } from "next/font/google";
 import { ScheduleProvider } from "@/lib/schedule-store";
 import "./globals.css";
 
@@ -7,12 +7,13 @@ const display = Fraunces({
   variable: "--font-display",
   subsets: ["latin"],
   weight: ["500", "600", "700"],
+  style: ["normal", "italic"],
 });
 
-const body = Source_Sans_3({
+const body = Nunito_Sans({
   variable: "--font-body",
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
+  weight: ["400", "500", "600", "700", "800"],
 });
 
 export const metadata: Metadata = {
