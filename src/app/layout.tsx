@@ -20,7 +20,7 @@ const body = Nunito_Sans({
 export const metadata: Metadata = {
   title: "Carpool — Schedule",
   description:
-    "Week + Agenda carpool schedule with Auth.js and Postgres persistence.",
+    "Week, Agenda, and Month carpool schedule with Auth.js and Postgres persistence.",
 };
 
 export default function RootLayout({
