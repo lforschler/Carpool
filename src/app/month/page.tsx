@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { AppShell } from "@/components/schedule/AppShell";
 import { TripEditor } from "@/components/schedule/TripEditor";
 import {
@@ -19,8 +19,13 @@ import { useSchedule } from "@/lib/schedule-store";
 import type { Driver, Kid, Trip } from "@/lib/types";
 
 const SAMPLE_MONTH = "2026-10-01";
+const DENSITY_KEY = "carpool-month-density-v1";
 
 type Density = "condensed" | "comfortable";
+
+function isDensity(value: string | null): value is Density {
+  return value === "condensed" || value === "comfortable";
+}
 
 function SlotButton({
   trip,
@@ -137,6 +142,23 @@ export default function MonthPage() {
   const [selectedId, setSelectedId] = useState<string | null>(null);
   const [density, setDensity] = useState<Density>("condensed");
 
+  useEffect(() => {
+    try {
+      const saved = localStorage.getItem(DENSITY_KEY);
+      if (isDensity(saved)) setDensity(saved);
+    } catch {
+      /* ignore */
+    }
+  }, []);
+
+  useEffect(() => {
+    try {
+      localStorage.setItem(DENSITY_KEY, density);
+    } catch {
+      /* ignore */
+    }
+  }, [density]);
+
   const rows = useMemo(
     () => buildMonthWeekRows(monthStart, trips),
     [monthStart, trips],
@@ -151,14 +173,13 @@ export default function MonthPage() {
         <div className="min-w-0">
           <p className="text-xs font-extrabold uppercase tracking-[0.18em] text-[var(--accent)]">
             Month view
-            {condensed ? " · condensed mock" : ""}
           </p>
           <h1 className="font-[family-name:var(--font-display)] text-2xl tracking-tight sm:text-3xl">
             {formatMonthLabel(monthStart)}
           </h1>
           <p className="text-sm text-[var(--muted)]">
             {condensed
-              ? "Mock density: AM · Driver on one line, riders below. Toggle Comfortable to compare."
+              ? "One row per week · AM · driver on one line, riders below · tap to edit."
               : "One row per week · AM/PM drivers and rider chips · tap to edit."}
           </p>
         </div>
@@ -176,6 +197,7 @@ export default function MonthPage() {
                   : "text-[var(--muted)]"
               }`}
               onClick={() => setDensity("condensed")}
+              aria-pressed={density === "condensed"}
             >
               Condensed
             </button>
@@ -187,6 +209,7 @@ export default function MonthPage() {
                   : "text-[var(--muted)]"
               }`}
               onClick={() => setDensity("comfortable")}
+              aria-pressed={density === "comfortable"}
             >
               Comfortable
             </button>
