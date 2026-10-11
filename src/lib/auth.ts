@@ -1,13 +1,10 @@
 import NextAuth from "next-auth";
 import Credentials from "next-auth/providers/credentials";
-import { compare } from "bcryptjs";
-import { z } from "zod";
+import {
+  parseCredentials,
+  verifyPassword,
+} from "@/lib/auth-credentials";
 import { prisma } from "@/lib/prisma";
-
-const credentialsSchema = z.object({
-  email: z.string().email(),
-  password: z.string().min(6),
-});
 
 async function membershipForUserId(userId: string) {
   const user = await prisma.user.findUnique({
@@ -37,10 +34,10 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
         password: { label: "Password", type: "password" },
       },
       async authorize(raw) {
-        const parsed = credentialsSchema.safeParse(raw);
-        if (!parsed.success) return null;
+        const parsed = parseCredentials(raw);
+        if (!parsed) return null;
 
-        const email = parsed.data.email.toLowerCase();
+        const { email, password } = parsed;
         const user = await prisma.user.findUnique({
           where: { email },
           include: {
@@ -49,7 +46,7 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
         });
         if (!user) return null;
 
-        const ok = await compare(parsed.data.password, user.passwordHash);
+        const ok = await verifyPassword(password, user.passwordHash);
         if (!ok) return null;
 
         return {
