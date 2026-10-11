@@ -15,7 +15,6 @@ import { useSchedule } from "@/lib/schedule-store";
 
 export default function WeekExplorePage() {
   const { trips, data } = useSchedule();
-  // Default to the Oct 12 week (rich Nico/Andy notes) near "today" in sample era
   const [weekStart, setWeekStart] = useState("2026-10-12");
   const [selectedId, setSelectedId] = useState<string | null>(null);
 
@@ -36,35 +35,36 @@ export default function WeekExplorePage() {
 
   return (
     <ExploreShell title="Week calendar" concept="/explore/week">
-      <div className="mb-4 flex flex-wrap items-center justify-between gap-3">
-        <div>
-          <h2 className="font-[family-name:var(--font-display)] text-2xl tracking-tight">
+      <div className="mb-3 flex flex-col gap-3 sm:mb-4 sm:flex-row sm:flex-wrap sm:items-end sm:justify-between">
+        <div className="min-w-0">
+          <h2 className="font-[family-name:var(--font-display)] text-xl tracking-tight sm:text-2xl">
             Week of {formatDay(weekStart)}
           </h2>
           <p className="text-sm text-[var(--muted)]">
-            Tap any AM/PM cell to edit. Swipe-friendly week arrows below.
+            <span className="sm:hidden">Swipe days · tap a trip to edit.</span>
+            <span className="hidden sm:inline">
+              Tap any AM/PM cell to edit. Use arrows for next/prev week.
+            </span>
           </p>
         </div>
-        <div className="flex gap-2">
+        <div className="grid grid-cols-3 gap-2 sm:flex">
           <button
             type="button"
-            className="rounded-lg border border-[var(--line)] bg-white px-3 py-2 text-sm"
+            className="min-h-11 rounded-lg border border-[var(--line)] bg-white px-3 py-2 text-sm font-medium touch-manipulation"
             onClick={() => setWeekStart(addDays(weekStart, -7))}
           >
             ← Prev
           </button>
           <button
             type="button"
-            className="rounded-lg border border-[var(--line)] bg-white px-3 py-2 text-sm"
-            onClick={() =>
-              setWeekStart(startOfWeekMonday("2026-10-12"))
-            }
+            className="min-h-11 rounded-lg border border-[var(--line)] bg-white px-3 py-2 text-sm font-medium touch-manipulation"
+            onClick={() => setWeekStart(startOfWeekMonday("2026-10-12"))}
           >
-            Sample week
+            Sample
           </button>
           <button
             type="button"
-            className="rounded-lg border border-[var(--line)] bg-white px-3 py-2 text-sm"
+            className="min-h-11 rounded-lg border border-[var(--line)] bg-white px-3 py-2 text-sm font-medium touch-manipulation"
             onClick={() => setWeekStart(addDays(weekStart, 7))}
           >
             Next →
@@ -72,13 +72,14 @@ export default function WeekExplorePage() {
         </div>
       </div>
 
-      <div className="grid gap-3 md:grid-cols-5">
+      {/* Mobile: horizontal snap carousel of days; desktop: 5-col grid */}
+      <div className="-mx-3 flex snap-x snap-mandatory gap-3 overflow-x-auto px-3 pb-2 scroll-px-3 sm:mx-0 sm:grid sm:snap-none sm:grid-cols-5 sm:overflow-visible sm:px-0 sm:pb-0">
         {days.map((d, i) => {
           const dayTrips = byDay.get(d) ?? [];
           return (
             <section
               key={d}
-              className="animate-rise rounded-2xl border border-[var(--line)] bg-white/70 p-3"
+              className="animate-rise w-[min(82vw,20rem)] shrink-0 snap-center rounded-2xl border border-[var(--line)] bg-white/80 p-3 max-sm:snap-center sm:w-auto sm:snap-none"
               style={{ animationDelay: `${i * 40}ms` }}
             >
               <header className="mb-2 border-b border-[var(--line)] pb-2">
@@ -109,6 +110,9 @@ export default function WeekExplorePage() {
           );
         })}
       </div>
+      <p className="mt-2 text-center text-[11px] text-[var(--muted)] sm:hidden">
+        Swipe for Tue–Fri →
+      </p>
 
       {selected && (
         <TripEditor trip={selected} onClose={() => setSelectedId(null)} />

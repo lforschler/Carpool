@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect } from "react";
 import { useSchedule } from "@/lib/schedule-store";
 import {
   exclusionNote,
@@ -26,38 +27,53 @@ export function TripEditor({
   const { data, updateTrip } = useSchedule();
   const { drivers, kids } = data;
 
+  useEffect(() => {
+    const prev = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.body.style.overflow = prev;
+    };
+  }, []);
+
   return (
     <div
-      className="fixed inset-0 z-40 flex items-end justify-center bg-black/35 p-0 sm:items-center sm:p-4"
+      className="fixed inset-0 z-50 flex items-end justify-center bg-black/40 p-0 sm:items-center sm:p-4"
       role="dialog"
       aria-modal="true"
       aria-labelledby="trip-editor-title"
       onClick={onClose}
     >
       <div
-        className="max-h-[90dvh] w-full max-w-lg overflow-y-auto rounded-t-2xl bg-[var(--bg)] p-5 shadow-xl sm:rounded-2xl"
+        className="max-h-[92dvh] w-full max-w-lg overflow-y-auto rounded-t-2xl bg-[var(--bg)] px-4 pb-[calc(1.25rem+env(safe-area-inset-bottom))] pt-2 shadow-xl sm:rounded-2xl sm:p-5"
         onClick={(e) => e.stopPropagation()}
       >
+        <div className="mx-auto mb-3 h-1 w-10 rounded-full bg-[var(--line)] sm:hidden" />
+
         <div className="mb-4 flex items-start justify-between gap-3">
-          <div>
+          <div className="min-w-0">
             <p className="text-xs uppercase tracking-[0.14em] text-[var(--muted)]">
               Edit trip
             </p>
             <h2
               id="trip-editor-title"
-              className="font-[family-name:var(--font-display)] text-2xl tracking-tight"
+              className="font-[family-name:var(--font-display)] text-xl tracking-tight sm:text-2xl"
             >
               {formatDay(trip.date)} · {trip.direction}
             </h2>
             <p className="mt-1 text-sm text-[var(--muted)]">
               {trip.time}
-              {trip.sheetNote ? ` · Sheet: “${trip.sheetNote}”` : ""}
+              {trip.sheetNote ? (
+                <span className="block sm:inline">
+                  {" "}
+                  · Sheet: “{trip.sheetNote}”
+                </span>
+              ) : null}
             </p>
           </div>
           <button
             type="button"
             onClick={onClose}
-            className="rounded-md px-2 py-1 text-sm text-[var(--muted)] hover:bg-[var(--surface)]"
+            className="min-h-10 shrink-0 rounded-md px-3 py-2 text-sm font-medium text-[var(--muted)] hover:bg-[var(--surface)]"
           >
             Close
           </button>
@@ -72,7 +88,7 @@ export function TripEditor({
             <label className="block space-y-1.5">
               <span className="text-sm font-medium">Driver</span>
               <select
-                className="w-full rounded-lg border border-[var(--line)] bg-white px-3 py-2 text-sm"
+                className="min-h-11 w-full rounded-lg border border-[var(--line)] bg-white px-3 py-2.5 text-base sm:text-sm"
                 value={trip.driverId ?? ""}
                 onChange={(e) =>
                   updateTrip(trip.id, {
@@ -98,7 +114,7 @@ export function TripEditor({
                   return (
                     <label
                       key={kid.id}
-                      className={`flex cursor-pointer items-center gap-2 rounded-lg border px-3 py-2 text-sm ${
+                      className={`flex min-h-12 cursor-pointer items-center gap-2 rounded-lg border px-3 py-2.5 text-sm ${
                         on
                           ? "border-[var(--accent)] bg-[var(--accent-soft)]"
                           : "border-[var(--line)] bg-white"
@@ -106,6 +122,7 @@ export function TripEditor({
                     >
                       <input
                         type="checkbox"
+                        className="size-4"
                         checked={on}
                         onChange={() => {
                           const riderIds = on
@@ -137,7 +154,7 @@ export function TripEditor({
             <label className="block space-y-1.5">
               <span className="text-sm font-medium">Status</span>
               <select
-                className="w-full rounded-lg border border-[var(--line)] bg-white px-3 py-2 text-sm"
+                className="min-h-11 w-full rounded-lg border border-[var(--line)] bg-white px-3 py-2.5 text-base sm:text-sm"
                 value={trip.status}
                 onChange={(e) =>
                   updateTrip(trip.id, {
@@ -155,12 +172,12 @@ export function TripEditor({
           </div>
         )}
 
-        <p className="mt-5 text-xs text-[var(--muted)]">
+        <p className="mt-5 text-xs leading-relaxed text-[var(--muted)]">
           Riding:{" "}
           {trip.riderIds.length
             ? trip.riderIds.map((id) => kidName(kids, id)).join(", ")
             : "none"}
-          . Edits persist in this browser session across all four concepts.
+          . Edits persist across all four concepts.
         </p>
       </div>
     </div>

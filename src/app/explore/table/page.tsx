@@ -3,7 +3,12 @@
 import { useMemo, useState } from "react";
 import { ExploreShell } from "@/components/explore/Shell";
 import { TripEditor } from "@/components/explore/TripEditor";
-import { formatDay, kidName, statusLabel } from "@/lib/format";
+import {
+  driverName,
+  formatDay,
+  kidName,
+  statusLabel,
+} from "@/lib/format";
 import { useSchedule } from "@/lib/schedule-store";
 import type { TripStatus } from "@/lib/types";
 
@@ -37,24 +42,28 @@ export default function TableExplorePage() {
 
   return (
     <ExploreShell title="Edit-heavy table" concept="/explore/table">
-      <div className="mb-4 flex flex-wrap items-end justify-between gap-3">
+      <div className="mb-3 flex flex-col gap-3 sm:mb-4 sm:flex-row sm:flex-wrap sm:items-end sm:justify-between">
         <div>
-          <h2 className="font-[family-name:var(--font-display)] text-2xl tracking-tight">
+          <h2 className="font-[family-name:var(--font-display)] text-xl tracking-tight sm:text-2xl">
             Trip spreadsheet
           </h2>
           <p className="text-sm text-[var(--muted)]">
-            Inline driver / status edits. Tap riders for the full editor.
-            Horizontal scroll on narrow screens.
+            <span className="sm:hidden">
+              Stacked edit cards on phone. Tap riders for the full editor.
+            </span>
+            <span className="hidden sm:inline">
+              Inline driver / status edits. Tap riders for the full editor.
+            </span>
           </p>
         </div>
-        <div className="flex gap-2 text-sm">
+        <div className="grid grid-cols-2 gap-2 text-sm sm:flex">
           <button
             type="button"
             onClick={() => setFilter("oct")}
-            className={`rounded-md px-3 py-1.5 ${
+            className={`min-h-11 rounded-md px-3 py-2 font-medium touch-manipulation ${
               filter === "oct"
                 ? "bg-[var(--accent)] text-white"
-                : "bg-white border border-[var(--line)]"
+                : "border border-[var(--line)] bg-white"
             }`}
           >
             October
@@ -62,10 +71,10 @@ export default function TableExplorePage() {
           <button
             type="button"
             onClick={() => setFilter("all")}
-            className={`rounded-md px-3 py-1.5 ${
+            className={`min-h-11 rounded-md px-3 py-2 font-medium touch-manipulation ${
               filter === "all"
                 ? "bg-[var(--accent)] text-white"
-                : "bg-white border border-[var(--line)]"
+                : "border border-[var(--line)] bg-white"
             }`}
           >
             All weeks
@@ -73,7 +82,101 @@ export default function TableExplorePage() {
         </div>
       </div>
 
-      <div className="animate-fade overflow-x-auto rounded-2xl border border-[var(--line)] bg-white">
+      {/* Mobile stacked cards */}
+      <div className="space-y-3 sm:hidden">
+        {rows.map((trip) => {
+          const capacity =
+            data.drivers.find((d) => d.id === trip.driverId)?.seatCapacity ?? 5;
+          const seatsLeft = trip.noSchool
+            ? "—"
+            : Math.max(0, capacity - trip.riderIds.length);
+          return (
+            <article
+              key={trip.id}
+              className="animate-fade rounded-2xl border border-[var(--line)] bg-white p-3"
+            >
+              <div className="flex items-start justify-between gap-2">
+                <div>
+                  <p className="text-sm font-semibold">
+                    {formatDay(trip.date)} · {trip.direction}
+                  </p>
+                  <p className="text-xs text-[var(--muted)]">{trip.time}</p>
+                </div>
+                <span className="text-[10px] uppercase tracking-wide text-[var(--muted)]">
+                  {seatsLeft === "—" ? "n/a" : `${seatsLeft} seats`}
+                </span>
+              </div>
+
+              {trip.noSchool ? (
+                <p className="mt-3 text-sm text-[var(--muted)]">No school</p>
+              ) : (
+                <div className="mt-3 space-y-2.5">
+                  <label className="block text-xs text-[var(--muted)]">
+                    Driver
+                    <select
+                      className="mt-1 min-h-11 w-full rounded-md border border-[var(--line)] bg-white px-2 py-2 text-sm text-[var(--ink)]"
+                      value={trip.driverId ?? ""}
+                      onChange={(e) =>
+                        updateTrip(trip.id, {
+                          driverId: e.target.value || null,
+                          status: e.target.value ? "planned" : "unassigned",
+                        })
+                      }
+                    >
+                      <option value="">Unassigned</option>
+                      {data.drivers.map((d) => (
+                        <option key={d.id} value={d.id}>
+                          {d.name}
+                        </option>
+                      ))}
+                    </select>
+                  </label>
+                  <button
+                    type="button"
+                    onClick={() => setSelectedId(trip.id)}
+                    className="w-full rounded-md border border-[var(--line)] bg-[var(--surface)] px-3 py-2.5 text-left text-sm touch-manipulation"
+                  >
+                    <span className="block text-xs text-[var(--muted)]">
+                      Riders · tap to edit
+                    </span>
+                    <span className="font-medium text-[var(--accent)]">
+                      {trip.riderIds
+                        .map((id) => kidName(data.kids, id))
+                        .join(", ") || "None"}
+                    </span>
+                  </button>
+                  <label className="block text-xs text-[var(--muted)]">
+                    Status
+                    <select
+                      className="mt-1 min-h-11 w-full rounded-md border border-[var(--line)] bg-white px-2 py-2 text-sm text-[var(--ink)]"
+                      value={trip.status}
+                      onChange={(e) =>
+                        updateTrip(trip.id, {
+                          status: e.target.value as TripStatus,
+                        })
+                      }
+                    >
+                      {STATUSES.map((s) => (
+                        <option key={s} value={s}>
+                          {statusLabel(s)}
+                        </option>
+                      ))}
+                    </select>
+                  </label>
+                  {trip.sheetNote && (
+                    <p className="text-xs text-[var(--muted)]">
+                      Sheet: {trip.sheetNote}
+                    </p>
+                  )}
+                </div>
+              )}
+            </article>
+          );
+        })}
+      </div>
+
+      {/* Desktop table */}
+      <div className="animate-fade hidden overflow-x-auto rounded-2xl border border-[var(--line)] bg-white sm:block">
         <table className="min-w-[48rem] w-full border-collapse text-left text-sm">
           <thead className="bg-[var(--surface)] text-xs uppercase tracking-wide text-[var(--muted)]">
             <tr>
@@ -100,13 +203,13 @@ export default function TableExplorePage() {
                   key={trip.id}
                   className="border-t border-[var(--line)] hover:bg-[var(--surface)]/60"
                 >
-                  <td className="px-3 py-2 whitespace-nowrap">
+                  <td className="whitespace-nowrap px-3 py-2">
                     {formatDay(trip.date)}
                   </td>
                   <td className="px-3 py-2 font-semibold text-[var(--accent)]">
                     {trip.direction}
                   </td>
-                  <td className="px-3 py-2 whitespace-nowrap">{trip.time}</td>
+                  <td className="whitespace-nowrap px-3 py-2">{trip.time}</td>
                   <td className="px-3 py-2">
                     {trip.noSchool ? (
                       "—"
@@ -167,7 +270,7 @@ export default function TableExplorePage() {
                     )}
                   </td>
                   <td className="px-3 py-2 text-xs text-[var(--muted)]">
-                    {trip.sheetNote}
+                    {trip.sheetNote || driverName(data.drivers, trip.driverId)}
                   </td>
                 </tr>
               );

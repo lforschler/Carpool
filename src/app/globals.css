@@ -23,6 +23,10 @@
   --font-display: var(--font-display);
 }
 
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
 body {
   background:
     radial-gradient(1200px 500px at 10% -10%, var(--sky), transparent 55%),
@@ -31,6 +35,24 @@ body {
   color: var(--ink);
   font-family: var(--font-body), "Segoe UI", sans-serif;
   min-height: 100dvh;
+  overscroll-behavior-y: none;
+}
+
+/* Comfortable touch targets + iOS select zoom avoidance helpers */
+@media (max-width: 639px) {
+  input,
+  select,
+  textarea,
+  button {
+    font-size: 16px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-rise,
+  .animate-fade {
+    animation: none !important;
+  }
 }
 
 @keyframes rise-in {

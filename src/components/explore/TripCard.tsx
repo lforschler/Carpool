@@ -26,14 +26,14 @@ export function TripCard({
     ? "border-[var(--line)] bg-[var(--surface)] opacity-70"
     : trip.status === "unassigned"
       ? "border-[var(--warn)] bg-[var(--warn-soft)]"
-      : "border-[var(--line)] bg-white hover:border-[var(--accent)]";
+      : "border-[var(--line)] bg-white active:border-[var(--accent)] hover:border-[var(--accent)]";
 
   return (
     <button
       type="button"
       onClick={onOpen}
-      className={`w-full rounded-xl border px-3 py-2.5 text-left transition ${tone} ${
-        compact ? "min-h-[4.5rem]" : ""
+      className={`w-full touch-manipulation rounded-xl border px-3 py-3 text-left transition ${tone} ${
+        compact ? "min-h-[4.75rem]" : ""
       }`}
     >
       <div className="flex items-center justify-between gap-2">
@@ -49,7 +49,7 @@ export function TripCard({
       </p>
       {!trip.noSchool && (
         <>
-          <p className="mt-1 line-clamp-2 text-xs text-[var(--muted)]">
+          <p className="mt-1 line-clamp-2 text-xs leading-snug text-[var(--muted)]">
             {trip.riderIds.map((id) => kidName(kids, id)).join(" · ") ||
               "No riders"}
           </p>

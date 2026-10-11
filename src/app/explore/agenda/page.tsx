@@ -12,7 +12,7 @@ import {
 } from "@/lib/format";
 import { useSchedule } from "@/lib/schedule-store";
 
-const ANCHOR = "2026-10-12"; // treat as “today” for the prototype
+const ANCHOR = "2026-10-12";
 
 function groupLabel(date: string): string {
   if (date === ANCHOR) return "Today";
@@ -47,20 +47,23 @@ export default function AgendaExplorePage() {
 
   return (
     <ExploreShell title="Agenda / list" concept="/explore/agenda">
-      <div className="mb-5 max-w-2xl">
-        <h2 className="font-[family-name:var(--font-display)] text-2xl tracking-tight">
+      <div className="mb-4 max-w-2xl sm:mb-5">
+        <h2 className="font-[family-name:var(--font-display)] text-xl tracking-tight sm:text-2xl">
           Upcoming trips
         </h2>
         <p className="text-sm text-[var(--muted)]">
-          Prototype “today” is Mon Oct 12, 2026 (sample week with Nico & Andy
-          notes). Expand a row to edit.
+          Prototype “today” is Mon Oct 12. Tap a row to edit.
         </p>
       </div>
 
-      <div className="mx-auto max-w-2xl space-y-6">
+      <div className="mx-auto max-w-2xl space-y-5">
         {groups.map(([label, list], gi) => (
-          <section key={label} className="animate-rise" style={{ animationDelay: `${gi * 50}ms` }}>
-            <h3 className="mb-2 font-[family-name:var(--font-display)] text-lg">
+          <section
+            key={label}
+            className="animate-rise"
+            style={{ animationDelay: `${gi * 50}ms` }}
+          >
+            <h3 className="sticky top-[3.25rem] z-10 -mx-1 mb-2 bg-[color-mix(in_oklab,var(--bg)_92%,white)] px-1 py-1.5 font-[family-name:var(--font-display)] text-base backdrop-blur-sm sm:static sm:bg-transparent sm:text-lg sm:backdrop-blur-none">
               {label}
             </h3>
             <ul className="divide-y divide-[var(--line)] overflow-hidden rounded-2xl border border-[var(--line)] bg-white">
@@ -71,16 +74,21 @@ export default function AgendaExplorePage() {
                     <button
                       type="button"
                       onClick={() => setSelectedId(trip.id)}
-                      className="flex w-full flex-col gap-1 px-4 py-3 text-left hover:bg-[var(--surface)] sm:flex-row sm:items-center sm:justify-between"
+                      className="flex w-full touch-manipulation flex-col gap-1.5 px-3 py-3.5 text-left active:bg-[var(--surface)] sm:flex-row sm:items-center sm:justify-between sm:px-4 sm:py-3 sm:hover:bg-[var(--surface)]"
                     >
-                      <div>
-                        <p className="text-sm font-semibold">
-                          {trip.direction} · {trip.time}
-                          <span className="ml-2 font-normal text-[var(--muted)]">
+                      <div className="min-w-0">
+                        <div className="flex flex-wrap items-baseline gap-x-2 gap-y-0.5">
+                          <p className="text-sm font-semibold">
+                            {trip.direction} · {trip.time}
+                          </p>
+                          <span className="text-xs text-[var(--muted)] sm:text-sm sm:font-normal">
                             {formatDay(trip.date)}
                           </span>
-                        </p>
-                        <p className="text-sm">
+                          <span className="text-[10px] uppercase tracking-wide text-[var(--muted)] sm:hidden">
+                            {statusLabel(trip.status)}
+                          </span>
+                        </div>
+                        <p className="mt-0.5 text-sm">
                           {trip.noSchool
                             ? "No school"
                             : driverName(data.drivers, trip.driverId)}
@@ -103,7 +111,7 @@ export default function AgendaExplorePage() {
                           </div>
                         )}
                       </div>
-                      <span className="text-xs uppercase tracking-wide text-[var(--muted)]">
+                      <span className="hidden text-xs uppercase tracking-wide text-[var(--muted)] sm:inline">
                         {statusLabel(trip.status)}
                       </span>
                     </button>
