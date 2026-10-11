@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Fraunces, Nunito_Sans } from "next/font/google";
+import { SessionProvider } from "@/components/providers/SessionProvider";
 import { ScheduleProvider } from "@/lib/schedule-store";
 import "./globals.css";
 
@@ -19,7 +20,7 @@ const body = Nunito_Sans({
 export const metadata: Metadata = {
   title: "Carpool — Schedule",
   description:
-    "Week + Agenda hybrid schedule for the Carpool project (mock data only).",
+    "Week + Agenda carpool schedule with Auth.js and Postgres persistence.",
 };
 
 export default function RootLayout({
@@ -30,7 +31,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${display.variable} ${body.variable} antialiased`}>
-        <ScheduleProvider>{children}</ScheduleProvider>
+        <SessionProvider>
+          <ScheduleProvider>{children}</ScheduleProvider>
+        </SessionProvider>
       </body>
     </html>
   );

@@ -1,0 +1,128 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum MembershipRole {
+  PARENT
+  DRIVER
+}
+
+enum TripDirection {
+  AM
+  PM
+}
+
+enum TripStatus {
+  PLANNED
+  CONFIRMED
+  UNASSIGNED
+  CANCELLED
+}
+
+model User {
+  id           String   @id @default(cuid())
+  email        String   @unique
+  passwordHash String
+  name         String
+  phone        String?
+  canDrive     Boolean  @default(true)
+  seatCapacity Int      @default(5)
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  membership Membership?
+  tripsDriven Trip[]     @relation("TripDriver")
+}
+
+model CarpoolGroup {
+  id          String   @id @default(cuid())
+  name        String
+  inviteToken String   @unique @default(cuid())
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  families Family[]
+  trips    Trip[]
+}
+
+model Family {
+  id          String   @id @default(cuid())
+  groupId     String
+  name        String
+  homeAddress String
+  phone       String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  group        CarpoolGroup @relation(fields: [groupId], references: [id], onDelete: Cascade)
+  memberships  Membership[]
+  children     Child[]
+
+  @@index([groupId])
+}
+
+model Membership {
+  id        String         @id @default(cuid())
+  userId    String         @unique
+  familyId  String
+  role      MembershipRole @default(PARENT)
+  createdAt DateTime       @default(now())
+
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+  family Family @relation(fields: [familyId], references: [id], onDelete: Cascade)
+
+  @@index([familyId])
+}
+
+model Child {
+  id        String   @id @default(cuid())
+  familyId  String
+  name      String
+  shortName String?
+  school    String?
+  grade     String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  family Family      @relation(fields: [familyId], references: [id], onDelete: Cascade)
+  rides  TripRider[]
+
+  @@index([familyId])
+}
+
+model Trip {
+  id        String        @id @default(cuid())
+  groupId   String
+  date      DateTime      @db.Date
+  direction TripDirection
+  time      String
+  driverId  String?
+  status    TripStatus    @default(UNASSIGNED)
+  noSchool  Boolean       @default(false)
+  sheetNote String?
+  createdAt DateTime      @default(now())
+  updatedAt DateTime      @updatedAt
+
+  group  CarpoolGroup @relation(fields: [groupId], references: [id], onDelete: Cascade)
+  driver User?        @relation("TripDriver", fields: [driverId], references: [id], onDelete: SetNull)
+  riders TripRider[]
+
+  @@unique([groupId, date, direction])
+  @@index([groupId, date])
+  @@index([driverId])
+}
+
+model TripRider {
+  tripId  String
+  childId String
+
+  trip  Trip  @relation(fields: [tripId], references: [id], onDelete: Cascade)
+  child Child @relation(fields: [childId], references: [id], onDelete: Cascade)
+
+  @@id([tripId, childId])
+}

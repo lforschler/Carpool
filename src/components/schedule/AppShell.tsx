@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { signOut, useSession } from "next-auth/react";
 import { useSchedule } from "@/lib/schedule-store";
 
 const TABS = [
@@ -12,10 +13,11 @@ export function AppShell({
   tab,
   children,
 }: {
-  tab: (typeof TABS)[number]["href"];
+  tab: (typeof TABS)[number]["href"] | "/family";
   children: React.ReactNode;
 }) {
-  const { resetTrips, hydrated } = useSchedule();
+  const { resetTrips, hydrated, persistMode } = useSchedule();
+  const { data: session } = useSession();
 
   return (
     <div className="min-h-dvh text-[var(--ink)] pb-[calc(4.35rem+env(safe-area-inset-bottom))] sm:pb-0">
@@ -31,6 +33,11 @@ export function AppShell({
           <p className="hidden text-sm font-semibold text-[var(--muted)] sm:inline">
             Schedule
           </p>
+          {persistMode === "db" && (
+            <span className="hidden rounded-md bg-[var(--accent-soft)] px-2 py-0.5 text-[10px] font-extrabold uppercase tracking-wide text-[var(--accent-deep)] sm:inline">
+              Saved to DB
+            </span>
+          )}
 
           <nav className="ml-auto hidden items-center gap-1.5 sm:flex">
             {TABS.map((t) => (
@@ -46,23 +53,50 @@ export function AppShell({
                 {t.label}
               </Link>
             ))}
+            <Link
+              href="/family"
+              className={`rounded-lg px-3 py-1.5 text-sm font-semibold ${
+                tab === "/family"
+                  ? "bg-[var(--accent)] text-white"
+                  : "bg-white/70 text-[var(--ink)] hover:bg-white"
+              }`}
+            >
+              Family
+            </Link>
             <button
               type="button"
               onClick={resetTrips}
               disabled={!hydrated}
               className="rounded-lg border border-[var(--line)] bg-white/50 px-2.5 py-1.5 text-sm font-medium text-[var(--muted)] hover:border-[var(--accent)] hover:text-[var(--ink)]"
             >
-              Reset edits
+              Reset
             </button>
-            <Link
-              href="/explore"
-              className="rounded-lg px-2.5 py-1.5 text-sm font-medium text-[var(--muted)] hover:text-[var(--ink)]"
-            >
-              Explore
-            </Link>
+            {session?.user ? (
+              <button
+                type="button"
+                onClick={() => signOut({ callbackUrl: "/login" })}
+                className="rounded-lg px-2.5 py-1.5 text-sm font-medium text-[var(--muted)] hover:text-[var(--ink)]"
+                title={session.user.email}
+              >
+                Sign out
+              </button>
+            ) : (
+              <Link
+                href="/login"
+                className="rounded-lg px-2.5 py-1.5 text-sm font-medium text-[var(--muted)]"
+              >
+                Sign in
+              </Link>
+            )}
           </nav>
 
           <div className="ml-auto flex items-center gap-2 sm:hidden">
+            <Link
+              href="/family"
+              className="rounded-lg border border-[var(--line)] bg-white/60 px-2.5 py-1 text-[11px] font-semibold text-[var(--muted)]"
+            >
+              Family
+            </Link>
             <button
               type="button"
               onClick={resetTrips}
