@@ -6,20 +6,32 @@ const prisma = new PrismaClient();
 
 type MockTrip = (typeof mock.trips)[number];
 
+/**
+ * Upsert seed: keep the Westwood group + demo users (same emails/ids when
+ * possible) so JWT sessions survive re-seeds. Only schedule rows are replaced.
+ */
 async function main() {
-  await prisma.tripRider.deleteMany();
-  await prisma.trip.deleteMany();
-  await prisma.child.deleteMany();
-  await prisma.membership.deleteMany();
-  await prisma.family.deleteMany();
-  await prisma.user.deleteMany();
-  await prisma.carpoolGroup.deleteMany();
-
   const passwordHash = await hash("carpool123", 10);
 
-  const group = await prisma.carpoolGroup.create({
-    data: { name: "Westwood Carpool" },
+  let group = await prisma.carpoolGroup.findFirst({
+    where: { name: "Westwood Carpool" },
   });
+  if (!group) {
+    group = await prisma.carpoolGroup.create({
+      data: { name: "Westwood Carpool" },
+    });
+  }
+
+  // Replace schedule graph for this group; do not delete demo users.
+  await prisma.tripRider.deleteMany({
+    where: { trip: { groupId: group.id } },
+  });
+  await prisma.trip.deleteMany({ where: { groupId: group.id } });
+  await prisma.child.deleteMany({ where: { family: { groupId: group.id } } });
+  await prisma.membership.deleteMany({
+    where: { family: { groupId: group.id } },
+  });
+  await prisma.family.deleteMany({ where: { groupId: group.id } });
 
   const families = await Promise.all(
     mock.families.map((f) =>
@@ -44,8 +56,9 @@ async function main() {
     const family = familyByMockId[drv.familyId];
     if (!family) continue;
     const email = `${drv.name.toLowerCase()}@carpool.local`;
-    const user = await prisma.user.create({
-      data: {
+    const user = await prisma.user.upsert({
+      where: { email },
+      create: {
         email,
         passwordHash,
         name: drv.fullName,
@@ -59,13 +72,26 @@ async function main() {
           },
         },
       },
+      update: {
+        passwordHash,
+        name: drv.fullName,
+        phone: family.phone,
+        canDrive: true,
+        seatCapacity: drv.seatCapacity,
+        membership: {
+          upsert: {
+            create: { familyId: family.id, role: "DRIVER" },
+            update: { familyId: family.id, role: "DRIVER" },
+          },
+        },
+      },
     });
     users.push({ mockId: drv.id, user });
   }
 
-  // Guest driver Nicola (no family in sheet headers)
-  const nicola = await prisma.user.create({
-    data: {
+  const nicola = await prisma.user.upsert({
+    where: { email: "nicola@carpool.local" },
+    create: {
       email: "nicola@carpool.local",
       passwordHash,
       name: "Nicola",
@@ -75,6 +101,18 @@ async function main() {
         create: {
           familyId: families[0].id,
           role: "DRIVER",
+        },
+      },
+    },
+    update: {
+      passwordHash,
+      name: "Nicola",
+      canDrive: true,
+      seatCapacity: 5,
+      membership: {
+        upsert: {
+          create: { familyId: families[0].id, role: "DRIVER" },
+          update: { familyId: families[0].id, role: "DRIVER" },
         },
       },
     },
@@ -137,7 +175,16 @@ async function main() {
     }
   }
 
-  console.log("Seeded Westwood Carpool");
+  const dates = (mock.trips as MockTrip[]).map((t) => t.date).sort();
+  console.log("Seeded Westwood Carpool (upsert; demo user ids preserved)");
+  console.log(
+    `Schedule: ${mock.schoolYearLabel ?? "sample"} — ${mock.trips.length} trips` +
+      (dates.length ? ` (${dates[0]} → ${dates[dates.length - 1]})` : ""),
+  );
+  if ("sheetTab" in mock && mock.sheetTab) {
+    console.log(`Sheet tab: ${mock.sheetTab}`);
+  }
+  console.log(`Group id (stable): ${group.id}`);
   console.log("Demo logins (password: carpool123):");
   for (const u of users) {
     console.log(`  ${u.user.email}`);

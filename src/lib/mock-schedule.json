@@ -1,6 +1,7 @@
 {
-  "source": "https://docs.google.com/spreadsheets/d/1A_w9-kkoFYO_WLQZaS2KQ6lsJ6pn3nsExurtwoBtems/edit?usp=drivesdk",
-  "schoolYearLabel": "Fall 2026 (from sample sheet)",
+  "source": "https://docs.google.com/spreadsheets/d/1A_w9-kkoFYO_WLQZaS2KQ6lsJ6pn3nsExurtwoBtems/edit?usp=drivesdk#gid=0",
+  "sheetTab": "2027",
+  "schoolYearLabel": "Fall 2026 / school year 2026\u20132027 (Google Sheet tab '2027')",
   "families": [
     {
       "id": "fam-jill",
@@ -9,10 +10,7 @@
       "phone": "417-612-3768",
       "address": "5355 S. Westwood Ave",
       "driverId": "drv-jill",
-      "kidIds": [
-        "kid-eli",
-        "kid-emily"
-      ]
+      "kidIds": []
     },
     {
       "id": "fam-lucas",
@@ -39,18 +37,6 @@
   ],
   "kids": [
     {
-      "id": "kid-eli",
-      "name": "Eli",
-      "familyId": "fam-jill",
-      "short": "Eli"
-    },
-    {
-      "id": "kid-emily",
-      "name": "Emily",
-      "familyId": "fam-jill",
-      "short": "Emily"
-    },
-    {
       "id": "kid-blake",
       "name": "Blake",
       "familyId": "fam-lucas",
@@ -60,20 +46,14 @@
       "id": "kid-anderson",
       "name": "Anderson",
       "familyId": "fam-dee",
-      "short": "A"
+      "short": "Andy",
+      "note": "Sheet 'A' / 'Andy' = Anderson Brewer"
     },
     {
       "id": "kid-nico",
       "name": "Nico",
       "familyId": null,
       "short": "Nico",
-      "note": "Guest rider from sheet"
-    },
-    {
-      "id": "kid-andy",
-      "name": "Andy",
-      "familyId": null,
-      "short": "Andy",
       "note": "Guest rider from sheet"
     }
   ],
@@ -115,8 +95,6 @@
       "time": "7:30 AM",
       "driverId": "drv-lucas",
       "riderIds": [
-        "kid-eli",
-        "kid-emily",
         "kid-blake",
         "kid-anderson"
       ],
@@ -132,8 +110,6 @@
       "time": "3:15 PM",
       "driverId": null,
       "riderIds": [
-        "kid-eli",
-        "kid-emily",
         "kid-blake"
       ],
       "excludedIds": [
@@ -150,8 +126,6 @@
       "time": "7:30 AM",
       "driverId": "drv-lucas",
       "riderIds": [
-        "kid-eli",
-        "kid-emily",
         "kid-blake"
       ],
       "excludedIds": [
@@ -168,8 +142,6 @@
       "time": "3:15 PM",
       "driverId": "drv-dee",
       "riderIds": [
-        "kid-eli",
-        "kid-emily",
         "kid-blake",
         "kid-anderson"
       ],
@@ -185,8 +157,6 @@
       "time": "7:30 AM",
       "driverId": "drv-lucas",
       "riderIds": [
-        "kid-eli",
-        "kid-emily",
         "kid-blake",
         "kid-anderson"
       ],
@@ -202,8 +172,6 @@
       "time": "3:15 PM",
       "driverId": null,
       "riderIds": [
-        "kid-eli",
-        "kid-emily",
         "kid-blake"
       ],
       "excludedIds": [
@@ -220,8 +188,6 @@
       "time": "7:30 AM",
       "driverId": "drv-lucas",
       "riderIds": [
-        "kid-eli",
-        "kid-emily",
         "kid-blake"
       ],
       "excludedIds": [
@@ -238,8 +204,6 @@
       "time": "3:15 PM",
       "driverId": null,
       "riderIds": [
-        "kid-eli",
-        "kid-emily",
         "kid-blake"
       ],
       "excludedIds": [
@@ -256,8 +220,6 @@
       "time": "7:30 AM",
       "driverId": "drv-lucas",
       "riderIds": [
-        "kid-eli",
-        "kid-emily",
         "kid-blake"
       ],
       "excludedIds": [
@@ -274,8 +236,6 @@
       "time": "3:15 PM",
       "driverId": "drv-dee",
       "riderIds": [
-        "kid-eli",
-        "kid-emily",
         "kid-blake",
         "kid-anderson"
       ],
@@ -291,8 +251,6 @@
       "time": "7:30 AM",
       "driverId": "drv-lucas",
       "riderIds": [
-        "kid-eli",
-        "kid-emily",
         "kid-blake",
         "kid-anderson"
       ],
@@ -308,8 +266,6 @@
       "time": "3:15 PM",
       "driverId": null,
       "riderIds": [
-        "kid-eli",
-        "kid-emily",
         "kid-blake"
       ],
       "excludedIds": [
@@ -326,8 +282,6 @@
       "time": "7:30 AM",
       "driverId": "drv-lucas",
       "riderIds": [
-        "kid-eli",
-        "kid-emily",
         "kid-blake"
       ],
       "excludedIds": [
@@ -344,8 +298,6 @@
       "time": "3:15 PM",
       "driverId": "drv-dee",
       "riderIds": [
-        "kid-eli",
-        "kid-emily",
         "kid-blake",
         "kid-anderson"
       ],
@@ -361,8 +313,6 @@
       "time": "7:30 AM",
       "driverId": "drv-lucas",
       "riderIds": [
-        "kid-eli",
-        "kid-emily",
         "kid-blake",
         "kid-anderson"
       ],
@@ -378,8 +328,6 @@
       "time": "3:15 PM",
       "driverId": null,
       "riderIds": [
-        "kid-eli",
-        "kid-emily",
         "kid-blake"
       ],
       "excludedIds": [
@@ -396,8 +344,6 @@
       "time": "7:30 AM",
       "driverId": "drv-lucas",
       "riderIds": [
-        "kid-eli",
-        "kid-emily",
         "kid-blake"
       ],
       "excludedIds": [
@@ -414,8 +360,6 @@
       "time": "3:15 PM",
       "driverId": "drv-dee",
       "riderIds": [
-        "kid-eli",
-        "kid-emily",
         "kid-blake",
         "kid-anderson"
       ],
@@ -455,8 +399,6 @@
       "time": "7:30 AM",
       "driverId": "drv-lucas",
       "riderIds": [
-        "kid-eli",
-        "kid-emily",
         "kid-blake",
         "kid-anderson"
       ],
@@ -472,8 +414,6 @@
       "time": "3:15 PM",
       "driverId": null,
       "riderIds": [
-        "kid-eli",
-        "kid-emily",
         "kid-blake"
       ],
       "excludedIds": [
@@ -490,8 +430,6 @@
       "time": "7:30 AM",
       "driverId": "drv-lucas",
       "riderIds": [
-        "kid-eli",
-        "kid-emily",
         "kid-blake"
       ],
       "excludedIds": [
@@ -508,8 +446,6 @@
       "time": "3:15 PM",
       "driverId": "drv-dee",
       "riderIds": [
-        "kid-eli",
-        "kid-emily",
         "kid-blake",
         "kid-anderson"
       ],
@@ -525,8 +461,6 @@
       "time": "7:30 AM",
       "driverId": "drv-lucas",
       "riderIds": [
-        "kid-eli",
-        "kid-emily",
         "kid-blake",
         "kid-anderson"
       ],
@@ -542,8 +476,6 @@
       "time": "3:15 PM",
       "driverId": null,
       "riderIds": [
-        "kid-eli",
-        "kid-emily",
         "kid-blake"
       ],
       "excludedIds": [
@@ -560,8 +492,6 @@
       "time": "7:30 AM",
       "driverId": "drv-lucas",
       "riderIds": [
-        "kid-eli",
-        "kid-emily",
         "kid-blake"
       ],
       "excludedIds": [
@@ -578,8 +508,6 @@
       "time": "3:15 PM",
       "driverId": null,
       "riderIds": [
-        "kid-eli",
-        "kid-emily",
         "kid-blake"
       ],
       "excludedIds": [
@@ -596,8 +524,6 @@
       "time": "7:30 AM",
       "driverId": "drv-lucas",
       "riderIds": [
-        "kid-eli",
-        "kid-emily",
         "kid-blake"
       ],
       "excludedIds": [
@@ -614,8 +540,6 @@
       "time": "3:15 PM",
       "driverId": "drv-dee",
       "riderIds": [
-        "kid-eli",
-        "kid-emily",
         "kid-blake",
         "kid-anderson"
       ],
@@ -631,8 +555,6 @@
       "time": "7:30 AM",
       "driverId": "drv-lucas",
       "riderIds": [
-        "kid-eli",
-        "kid-emily",
         "kid-blake",
         "kid-anderson"
       ],
@@ -648,8 +570,6 @@
       "time": "3:15 PM",
       "driverId": null,
       "riderIds": [
-        "kid-eli",
-        "kid-emily",
         "kid-blake"
       ],
       "excludedIds": [
@@ -666,8 +586,6 @@
       "time": "7:30 AM",
       "driverId": "drv-lucas",
       "riderIds": [
-        "kid-eli",
-        "kid-emily",
         "kid-blake"
       ],
       "excludedIds": [
@@ -684,8 +602,6 @@
       "time": "3:15 PM",
       "driverId": "drv-dee",
       "riderIds": [
-        "kid-eli",
-        "kid-emily",
         "kid-blake",
         "kid-anderson"
       ],
@@ -701,8 +617,6 @@
       "time": "7:30 AM",
       "driverId": "drv-lucas",
       "riderIds": [
-        "kid-eli",
-        "kid-emily",
         "kid-blake",
         "kid-anderson"
       ],
@@ -718,8 +632,6 @@
       "time": "3:15 PM",
       "driverId": null,
       "riderIds": [
-        "kid-eli",
-        "kid-emily",
         "kid-blake"
       ],
       "excludedIds": [
@@ -736,8 +648,6 @@
       "time": "7:30 AM",
       "driverId": "drv-lucas",
       "riderIds": [
-        "kid-eli",
-        "kid-emily",
         "kid-blake"
       ],
       "excludedIds": [
@@ -754,8 +664,6 @@
       "time": "3:15 PM",
       "driverId": "drv-dee",
       "riderIds": [
-        "kid-eli",
-        "kid-emily",
         "kid-blake",
         "kid-anderson"
       ],
@@ -771,8 +679,6 @@
       "time": "7:30 AM",
       "driverId": "drv-lucas",
       "riderIds": [
-        "kid-eli",
-        "kid-emily",
         "kid-blake",
         "kid-anderson"
       ],
@@ -788,8 +694,6 @@
       "time": "3:15 PM",
       "driverId": "drv-dee",
       "riderIds": [
-        "kid-eli",
-        "kid-emily",
         "kid-blake",
         "kid-anderson"
       ],
@@ -805,8 +709,6 @@
       "time": "7:30 AM",
       "driverId": "drv-lucas",
       "riderIds": [
-        "kid-eli",
-        "kid-emily",
         "kid-blake",
         "kid-anderson"
       ],
@@ -822,8 +724,6 @@
       "time": "3:15 PM",
       "driverId": null,
       "riderIds": [
-        "kid-eli",
-        "kid-emily",
         "kid-blake"
       ],
       "excludedIds": [
@@ -840,8 +740,6 @@
       "time": "7:30 AM",
       "driverId": "drv-lucas",
       "riderIds": [
-        "kid-eli",
-        "kid-emily",
         "kid-blake"
       ],
       "excludedIds": [
@@ -858,8 +756,6 @@
       "time": "3:15 PM",
       "driverId": "drv-dee",
       "riderIds": [
-        "kid-eli",
-        "kid-emily",
         "kid-blake",
         "kid-anderson"
       ],
@@ -875,8 +771,6 @@
       "time": "7:30 AM",
       "driverId": "drv-lucas",
       "riderIds": [
-        "kid-eli",
-        "kid-emily",
         "kid-blake",
         "kid-anderson"
       ],
@@ -892,8 +786,6 @@
       "time": "3:15 PM",
       "driverId": null,
       "riderIds": [
-        "kid-eli",
-        "kid-emily",
         "kid-blake"
       ],
       "excludedIds": [
@@ -910,8 +802,6 @@
       "time": "7:30 AM",
       "driverId": "drv-lucas",
       "riderIds": [
-        "kid-eli",
-        "kid-emily",
         "kid-blake"
       ],
       "excludedIds": [
@@ -928,8 +818,6 @@
       "time": "3:15 PM",
       "driverId": null,
       "riderIds": [
-        "kid-eli",
-        "kid-emily",
         "kid-blake"
       ],
       "excludedIds": [
@@ -946,8 +834,6 @@
       "time": "7:30 AM",
       "driverId": "drv-lucas",
       "riderIds": [
-        "kid-eli",
-        "kid-emily",
         "kid-blake"
       ],
       "excludedIds": [
@@ -964,8 +850,6 @@
       "time": "3:15 PM",
       "driverId": "drv-dee",
       "riderIds": [
-        "kid-eli",
-        "kid-emily",
         "kid-blake",
         "kid-anderson"
       ],
@@ -981,8 +865,6 @@
       "time": "7:30 AM",
       "driverId": "drv-lucas",
       "riderIds": [
-        "kid-eli",
-        "kid-emily",
         "kid-blake",
         "kid-anderson"
       ],
@@ -998,8 +880,6 @@
       "time": "3:15 PM",
       "driverId": null,
       "riderIds": [
-        "kid-eli",
-        "kid-emily",
         "kid-blake"
       ],
       "excludedIds": [
@@ -1016,8 +896,6 @@
       "time": "7:30 AM",
       "driverId": "drv-lucas",
       "riderIds": [
-        "kid-eli",
-        "kid-emily",
         "kid-blake"
       ],
       "excludedIds": [
@@ -1034,8 +912,6 @@
       "time": "3:15 PM",
       "driverId": "drv-dee",
       "riderIds": [
-        "kid-eli",
-        "kid-emily",
         "kid-blake",
         "kid-anderson"
       ],
@@ -1051,8 +927,6 @@
       "time": "7:30 AM",
       "driverId": "drv-lucas",
       "riderIds": [
-        "kid-eli",
-        "kid-emily",
         "kid-blake",
         "kid-anderson"
       ],
@@ -1068,8 +942,6 @@
       "time": "3:15 PM",
       "driverId": null,
       "riderIds": [
-        "kid-eli",
-        "kid-emily",
         "kid-blake"
       ],
       "excludedIds": [
@@ -1086,8 +958,6 @@
       "time": "7:30 AM",
       "driverId": "drv-lucas",
       "riderIds": [
-        "kid-eli",
-        "kid-emily",
         "kid-blake"
       ],
       "excludedIds": [
@@ -1104,8 +974,6 @@
       "time": "3:15 PM",
       "driverId": "drv-dee",
       "riderIds": [
-        "kid-eli",
-        "kid-emily",
         "kid-blake",
         "kid-anderson"
       ],
@@ -1121,8 +989,6 @@
       "time": "7:30 AM",
       "driverId": "drv-lucas",
       "riderIds": [
-        "kid-eli",
-        "kid-emily",
         "kid-blake",
         "kid-anderson"
       ],
@@ -1138,8 +1004,6 @@
       "time": "3:15 PM",
       "driverId": "drv-dee",
       "riderIds": [
-        "kid-eli",
-        "kid-emily",
         "kid-blake",
         "kid-anderson"
       ],
@@ -1155,8 +1019,6 @@
       "time": "7:30 AM",
       "driverId": "drv-lucas",
       "riderIds": [
-        "kid-eli",
-        "kid-emily",
         "kid-blake",
         "kid-anderson"
       ],
@@ -1172,8 +1034,6 @@
       "time": "3:15 PM",
       "driverId": null,
       "riderIds": [
-        "kid-eli",
-        "kid-emily",
         "kid-blake"
       ],
       "excludedIds": [
@@ -1190,8 +1050,6 @@
       "time": "7:30 AM",
       "driverId": "drv-lucas",
       "riderIds": [
-        "kid-eli",
-        "kid-emily",
         "kid-blake"
       ],
       "excludedIds": [
@@ -1208,8 +1066,6 @@
       "time": "3:15 PM",
       "driverId": "drv-dee",
       "riderIds": [
-        "kid-eli",
-        "kid-emily",
         "kid-blake",
         "kid-anderson"
       ],
@@ -1225,8 +1081,6 @@
       "time": "7:30 AM",
       "driverId": "drv-lucas",
       "riderIds": [
-        "kid-eli",
-        "kid-emily",
         "kid-blake",
         "kid-anderson"
       ],
@@ -1242,8 +1096,6 @@
       "time": "3:15 PM",
       "driverId": null,
       "riderIds": [
-        "kid-eli",
-        "kid-emily",
         "kid-blake"
       ],
       "excludedIds": [
@@ -1260,8 +1112,6 @@
       "time": "7:30 AM",
       "driverId": "drv-lucas",
       "riderIds": [
-        "kid-eli",
-        "kid-emily",
         "kid-blake"
       ],
       "excludedIds": [
@@ -1278,8 +1128,6 @@
       "time": "3:15 PM",
       "driverId": null,
       "riderIds": [
-        "kid-eli",
-        "kid-emily",
         "kid-blake"
       ],
       "excludedIds": [
@@ -1296,8 +1144,6 @@
       "time": "7:30 AM",
       "driverId": "drv-lucas",
       "riderIds": [
-        "kid-eli",
-        "kid-emily",
         "kid-blake",
         "kid-nico"
       ],
@@ -1315,8 +1161,6 @@
       "time": "3:15 PM",
       "driverId": "drv-dee",
       "riderIds": [
-        "kid-eli",
-        "kid-emily",
         "kid-blake",
         "kid-anderson",
         "kid-nico"
@@ -1333,12 +1177,9 @@
       "time": "7:30 AM",
       "driverId": "drv-lucas",
       "riderIds": [
-        "kid-eli",
-        "kid-emily",
         "kid-blake",
         "kid-anderson",
-        "kid-nico",
-        "kid-andy"
+        "kid-nico"
       ],
       "excludedIds": [],
       "status": "planned",
@@ -1352,8 +1193,6 @@
       "time": "3:15 PM",
       "driverId": "drv-lucas",
       "riderIds": [
-        "kid-eli",
-        "kid-emily",
         "kid-blake",
         "kid-nico"
       ],
@@ -1371,8 +1210,6 @@
       "time": "7:30 AM",
       "driverId": "drv-lucas",
       "riderIds": [
-        "kid-eli",
-        "kid-emily",
         "kid-blake",
         "kid-nico"
       ],
@@ -1390,8 +1227,6 @@
       "time": "3:15 PM",
       "driverId": "drv-dee",
       "riderIds": [
-        "kid-eli",
-        "kid-emily",
         "kid-blake",
         "kid-anderson",
         "kid-nico"
@@ -1408,12 +1243,9 @@
       "time": "7:30 AM",
       "driverId": "drv-lucas",
       "riderIds": [
-        "kid-eli",
-        "kid-emily",
         "kid-blake",
         "kid-anderson",
-        "kid-nico",
-        "kid-andy"
+        "kid-nico"
       ],
       "excludedIds": [],
       "status": "planned",
@@ -1427,8 +1259,6 @@
       "time": "3:15 PM",
       "driverId": "drv-nicola",
       "riderIds": [
-        "kid-eli",
-        "kid-emily",
         "kid-blake"
       ],
       "excludedIds": [
@@ -1445,8 +1275,6 @@
       "time": "7:30 AM",
       "driverId": "drv-lucas",
       "riderIds": [
-        "kid-eli",
-        "kid-emily",
         "kid-blake"
       ],
       "excludedIds": [
@@ -1463,8 +1291,6 @@
       "time": "3:15 PM",
       "driverId": "drv-dee",
       "riderIds": [
-        "kid-eli",
-        "kid-emily",
         "kid-blake",
         "kid-anderson"
       ],
@@ -1480,8 +1306,6 @@
       "time": "7:30 AM",
       "driverId": "drv-lucas",
       "riderIds": [
-        "kid-eli",
-        "kid-emily",
         "kid-blake",
         "kid-anderson"
       ],
@@ -1497,8 +1321,6 @@
       "time": "3:15 PM",
       "driverId": "drv-dee",
       "riderIds": [
-        "kid-eli",
-        "kid-emily",
         "kid-blake",
         "kid-anderson"
       ],
@@ -1514,8 +1336,6 @@
       "time": "7:30 AM",
       "driverId": "drv-lucas",
       "riderIds": [
-        "kid-eli",
-        "kid-emily",
         "kid-blake",
         "kid-anderson"
       ],
@@ -1531,8 +1351,6 @@
       "time": "3:15 PM",
       "driverId": null,
       "riderIds": [
-        "kid-eli",
-        "kid-emily",
         "kid-blake"
       ],
       "excludedIds": [
@@ -1549,8 +1367,6 @@
       "time": "7:30 AM",
       "driverId": "drv-lucas",
       "riderIds": [
-        "kid-eli",
-        "kid-emily",
         "kid-blake"
       ],
       "excludedIds": [
@@ -1567,8 +1383,6 @@
       "time": "3:15 PM",
       "driverId": "drv-dee",
       "riderIds": [
-        "kid-eli",
-        "kid-emily",
         "kid-blake",
         "kid-anderson"
       ],
@@ -1584,8 +1398,6 @@
       "time": "7:30 AM",
       "driverId": "drv-lucas",
       "riderIds": [
-        "kid-eli",
-        "kid-emily",
         "kid-blake",
         "kid-anderson"
       ],
@@ -1601,8 +1413,6 @@
       "time": "3:15 PM",
       "driverId": null,
       "riderIds": [
-        "kid-eli",
-        "kid-emily",
         "kid-blake"
       ],
       "excludedIds": [
@@ -1643,8 +1453,6 @@
       "time": "7:30 AM",
       "driverId": "drv-lucas",
       "riderIds": [
-        "kid-eli",
-        "kid-emily",
         "kid-blake"
       ],
       "excludedIds": [
@@ -1661,8 +1469,6 @@
       "time": "3:15 PM",
       "driverId": "drv-dee",
       "riderIds": [
-        "kid-eli",
-        "kid-emily",
         "kid-blake",
         "kid-anderson"
       ],
@@ -1678,8 +1484,6 @@
       "time": "7:30 AM",
       "driverId": "drv-lucas",
       "riderIds": [
-        "kid-eli",
-        "kid-emily",
         "kid-blake",
         "kid-anderson"
       ],
@@ -1695,8 +1499,6 @@
       "time": "3:15 PM",
       "driverId": null,
       "riderIds": [
-        "kid-eli",
-        "kid-emily",
         "kid-blake"
       ],
       "excludedIds": [
@@ -1713,8 +1515,6 @@
       "time": "7:30 AM",
       "driverId": "drv-lucas",
       "riderIds": [
-        "kid-eli",
-        "kid-emily",
         "kid-blake"
       ],
       "excludedIds": [
@@ -1731,8 +1531,6 @@
       "time": "3:15 PM",
       "driverId": "drv-dee",
       "riderIds": [
-        "kid-eli",
-        "kid-emily",
         "kid-blake",
         "kid-anderson"
       ],
@@ -1748,8 +1546,6 @@
       "time": "7:30 AM",
       "driverId": "drv-lucas",
       "riderIds": [
-        "kid-eli",
-        "kid-emily",
         "kid-blake",
         "kid-anderson"
       ],
@@ -1765,8 +1561,6 @@
       "time": "3:15 PM",
       "driverId": null,
       "riderIds": [
-        "kid-eli",
-        "kid-emily",
         "kid-blake"
       ],
       "excludedIds": [
@@ -1783,8 +1577,6 @@
       "time": "7:30 AM",
       "driverId": "drv-lucas",
       "riderIds": [
-        "kid-eli",
-        "kid-emily",
         "kid-blake"
       ],
       "excludedIds": [
@@ -1801,8 +1593,6 @@
       "time": "3:15 PM",
       "driverId": "drv-dee",
       "riderIds": [
-        "kid-eli",
-        "kid-emily",
         "kid-blake",
         "kid-anderson"
       ],
@@ -1866,8 +1656,6 @@
       "time": "7:30 AM",
       "driverId": "drv-lucas",
       "riderIds": [
-        "kid-eli",
-        "kid-emily",
         "kid-blake"
       ],
       "excludedIds": [
@@ -1875,7 +1663,7 @@
       ],
       "status": "planned",
       "noSchool": false,
-      "sheetNote": "Lucas No A)"
+      "sheetNote": "Lucas (No A)"
     },
     {
       "id": "trip-2026-11-04-pm",
@@ -1884,8 +1672,6 @@
       "time": "3:15 PM",
       "driverId": "drv-dee",
       "riderIds": [
-        "kid-eli",
-        "kid-emily",
         "kid-blake",
         "kid-anderson"
       ],
@@ -1901,8 +1687,6 @@
       "time": "7:30 AM",
       "driverId": "drv-lucas",
       "riderIds": [
-        "kid-eli",
-        "kid-emily",
         "kid-blake",
         "kid-anderson"
       ],
@@ -1918,8 +1702,6 @@
       "time": "3:15 PM",
       "driverId": null,
       "riderIds": [
-        "kid-eli",
-        "kid-emily",
         "kid-blake"
       ],
       "excludedIds": [
@@ -1936,8 +1718,6 @@
       "time": "7:30 AM",
       "driverId": "drv-lucas",
       "riderIds": [
-        "kid-eli",
-        "kid-emily",
         "kid-blake"
       ],
       "excludedIds": [
@@ -1954,8 +1734,6 @@
       "time": "3:15 PM",
       "driverId": null,
       "riderIds": [
-        "kid-eli",
-        "kid-emily",
         "kid-blake"
       ],
       "excludedIds": [
@@ -1972,8 +1750,6 @@
       "time": "7:30 AM",
       "driverId": "drv-lucas",
       "riderIds": [
-        "kid-eli",
-        "kid-emily",
         "kid-blake"
       ],
       "excludedIds": [
@@ -1990,8 +1766,6 @@
       "time": "3:15 PM",
       "driverId": "drv-dee",
       "riderIds": [
-        "kid-eli",
-        "kid-emily",
         "kid-blake",
         "kid-anderson"
       ],
@@ -2007,8 +1781,6 @@
       "time": "7:30 AM",
       "driverId": "drv-lucas",
       "riderIds": [
-        "kid-eli",
-        "kid-emily",
         "kid-blake",
         "kid-anderson"
       ],
@@ -2024,8 +1796,6 @@
       "time": "3:15 PM",
       "driverId": null,
       "riderIds": [
-        "kid-eli",
-        "kid-emily",
         "kid-blake"
       ],
       "excludedIds": [
@@ -2042,8 +1812,6 @@
       "time": "7:30 AM",
       "driverId": "drv-lucas",
       "riderIds": [
-        "kid-eli",
-        "kid-emily",
         "kid-blake"
       ],
       "excludedIds": [
@@ -2060,8 +1828,6 @@
       "time": "3:15 PM",
       "driverId": "drv-dee",
       "riderIds": [
-        "kid-eli",
-        "kid-emily",
         "kid-blake",
         "kid-anderson"
       ],
@@ -2077,8 +1843,6 @@
       "time": "7:30 AM",
       "driverId": "drv-lucas",
       "riderIds": [
-        "kid-eli",
-        "kid-emily",
         "kid-blake",
         "kid-anderson"
       ],
@@ -2094,8 +1858,6 @@
       "time": "3:15 PM",
       "driverId": null,
       "riderIds": [
-        "kid-eli",
-        "kid-emily",
         "kid-blake"
       ],
       "excludedIds": [
@@ -2112,8 +1874,6 @@
       "time": "7:30 AM",
       "driverId": "drv-lucas",
       "riderIds": [
-        "kid-eli",
-        "kid-emily",
         "kid-blake"
       ],
       "excludedIds": [
@@ -2130,8 +1890,6 @@
       "time": "3:15 PM",
       "driverId": "drv-dee",
       "riderIds": [
-        "kid-eli",
-        "kid-emily",
         "kid-blake",
         "kid-anderson"
       ],
@@ -2147,8 +1905,6 @@
       "time": "7:30 AM",
       "driverId": "drv-lucas",
       "riderIds": [
-        "kid-eli",
-        "kid-emily",
         "kid-blake",
         "kid-anderson"
       ],
@@ -2164,8 +1920,6 @@
       "time": "3:15 PM",
       "driverId": "drv-dee",
       "riderIds": [
-        "kid-eli",
-        "kid-emily",
         "kid-blake",
         "kid-anderson"
       ],
@@ -2181,8 +1935,6 @@
       "time": "7:30 AM",
       "driverId": "drv-lucas",
       "riderIds": [
-        "kid-eli",
-        "kid-emily",
         "kid-blake",
         "kid-anderson"
       ],
@@ -2198,8 +1950,6 @@
       "time": "3:15 PM",
       "driverId": null,
       "riderIds": [
-        "kid-eli",
-        "kid-emily",
         "kid-blake"
       ],
       "excludedIds": [
@@ -2216,8 +1966,6 @@
       "time": "7:30 AM",
       "driverId": "drv-lucas",
       "riderIds": [
-        "kid-eli",
-        "kid-emily",
         "kid-blake"
       ],
       "excludedIds": [
@@ -2234,8 +1982,6 @@
       "time": "3:15 PM",
       "driverId": "drv-dee",
       "riderIds": [
-        "kid-eli",
-        "kid-emily",
         "kid-blake",
         "kid-anderson"
       ],
@@ -2251,8 +1997,6 @@
       "time": "7:30 AM",
       "driverId": "drv-lucas",
       "riderIds": [
-        "kid-eli",
-        "kid-emily",
         "kid-blake",
         "kid-anderson"
       ],
@@ -2268,8 +2012,6 @@
       "time": "3:15 PM",
       "driverId": null,
       "riderIds": [
-        "kid-eli",
-        "kid-emily",
         "kid-blake"
       ],
       "excludedIds": [
@@ -2286,8 +2028,6 @@
       "time": "7:30 AM",
       "driverId": "drv-lucas",
       "riderIds": [
-        "kid-eli",
-        "kid-emily",
         "kid-blake"
       ],
       "excludedIds": [
@@ -2304,8 +2044,6 @@
       "time": "3:15 PM",
       "driverId": null,
       "riderIds": [
-        "kid-eli",
-        "kid-emily",
         "kid-blake"
       ],
       "excludedIds": [
@@ -2322,8 +2060,6 @@
       "time": "7:30 AM",
       "driverId": "drv-lucas",
       "riderIds": [
-        "kid-eli",
-        "kid-emily",
         "kid-blake"
       ],
       "excludedIds": [
@@ -2340,8 +2076,6 @@
       "time": "3:15 PM",
       "driverId": "drv-dee",
       "riderIds": [
-        "kid-eli",
-        "kid-emily",
         "kid-blake",
         "kid-anderson"
       ],
@@ -2357,8 +2091,6 @@
       "time": "7:30 AM",
       "driverId": "drv-lucas",
       "riderIds": [
-        "kid-eli",
-        "kid-emily",
         "kid-blake",
         "kid-anderson"
       ],
@@ -2374,8 +2106,6 @@
       "time": "3:15 PM",
       "driverId": null,
       "riderIds": [
-        "kid-eli",
-        "kid-emily",
         "kid-blake"
       ],
       "excludedIds": [
@@ -2464,8 +2194,6 @@
       "time": "7:30 AM",
       "driverId": "drv-lucas",
       "riderIds": [
-        "kid-eli",
-        "kid-emily",
         "kid-blake"
       ],
       "excludedIds": [
@@ -2482,8 +2210,6 @@
       "time": "3:15 PM",
       "driverId": "drv-dee",
       "riderIds": [
-        "kid-eli",
-        "kid-emily",
         "kid-blake",
         "kid-anderson"
       ],
@@ -2499,8 +2225,6 @@
       "time": "7:30 AM",
       "driverId": "drv-lucas",
       "riderIds": [
-        "kid-eli",
-        "kid-emily",
         "kid-blake",
         "kid-anderson"
       ],
@@ -2516,8 +2240,6 @@
       "time": "3:15 PM",
       "driverId": null,
       "riderIds": [
-        "kid-eli",
-        "kid-emily",
         "kid-blake"
       ],
       "excludedIds": [
@@ -2534,8 +2256,6 @@
       "time": "7:30 AM",
       "driverId": "drv-lucas",
       "riderIds": [
-        "kid-eli",
-        "kid-emily",
         "kid-blake"
       ],
       "excludedIds": [
@@ -2552,8 +2272,6 @@
       "time": "3:15 PM",
       "driverId": "drv-dee",
       "riderIds": [
-        "kid-eli",
-        "kid-emily",
         "kid-blake",
         "kid-anderson"
       ],
@@ -2569,8 +2287,6 @@
       "time": "7:30 AM",
       "driverId": "drv-lucas",
       "riderIds": [
-        "kid-eli",
-        "kid-emily",
         "kid-blake",
         "kid-anderson"
       ],
@@ -2586,8 +2302,6 @@
       "time": "3:15 PM",
       "driverId": null,
       "riderIds": [
-        "kid-eli",
-        "kid-emily",
         "kid-blake"
       ],
       "excludedIds": [
@@ -2604,8 +2318,6 @@
       "time": "7:30 AM",
       "driverId": "drv-lucas",
       "riderIds": [
-        "kid-eli",
-        "kid-emily",
         "kid-blake"
       ],
       "excludedIds": [
@@ -2622,8 +2334,6 @@
       "time": "3:15 PM",
       "driverId": null,
       "riderIds": [
-        "kid-eli",
-        "kid-emily",
         "kid-blake"
       ],
       "excludedIds": [
@@ -2640,8 +2350,6 @@
       "time": "7:30 AM",
       "driverId": "drv-lucas",
       "riderIds": [
-        "kid-eli",
-        "kid-emily",
         "kid-blake"
       ],
       "excludedIds": [
@@ -2658,8 +2366,6 @@
       "time": "3:15 PM",
       "driverId": "drv-dee",
       "riderIds": [
-        "kid-eli",
-        "kid-emily",
         "kid-blake",
         "kid-anderson"
       ],
@@ -2675,8 +2381,6 @@
       "time": "7:30 AM",
       "driverId": "drv-lucas",
       "riderIds": [
-        "kid-eli",
-        "kid-emily",
         "kid-blake",
         "kid-anderson"
       ],
@@ -2692,8 +2396,6 @@
       "time": "3:15 PM",
       "driverId": null,
       "riderIds": [
-        "kid-eli",
-        "kid-emily",
         "kid-blake"
       ],
       "excludedIds": [
@@ -2710,8 +2412,6 @@
       "time": "7:30 AM",
       "driverId": "drv-lucas",
       "riderIds": [
-        "kid-eli",
-        "kid-emily",
         "kid-blake"
       ],
       "excludedIds": [
@@ -2728,8 +2428,6 @@
       "time": "3:15 PM",
       "driverId": "drv-dee",
       "riderIds": [
-        "kid-eli",
-        "kid-emily",
         "kid-blake",
         "kid-anderson"
       ],
@@ -2745,8 +2443,6 @@
       "time": "7:30 AM",
       "driverId": "drv-lucas",
       "riderIds": [
-        "kid-eli",
-        "kid-emily",
         "kid-blake",
         "kid-anderson"
       ],
@@ -2762,8 +2458,6 @@
       "time": "3:15 PM",
       "driverId": "drv-lucas",
       "riderIds": [
-        "kid-eli",
-        "kid-emily",
         "kid-blake"
       ],
       "excludedIds": [
@@ -2780,8 +2474,6 @@
       "time": "7:30 AM",
       "driverId": "drv-lucas",
       "riderIds": [
-        "kid-eli",
-        "kid-emily",
         "kid-blake"
       ],
       "excludedIds": [
@@ -2798,8 +2490,6 @@
       "time": "3:15 PM",
       "driverId": "drv-dee",
       "riderIds": [
-        "kid-eli",
-        "kid-emily",
         "kid-blake",
         "kid-anderson"
       ],
@@ -2815,8 +2505,6 @@
       "time": "7:30 AM",
       "driverId": "drv-lucas",
       "riderIds": [
-        "kid-eli",
-        "kid-emily",
         "kid-blake",
         "kid-anderson"
       ],
@@ -2832,8 +2520,6 @@
       "time": "3:15 PM",
       "driverId": "drv-dee",
       "riderIds": [
-        "kid-eli",
-        "kid-emily",
         "kid-blake",
         "kid-anderson"
       ],
@@ -2849,8 +2535,6 @@
       "time": "7:30 AM",
       "driverId": "drv-lucas",
       "riderIds": [
-        "kid-eli",
-        "kid-emily",
         "kid-blake",
         "kid-anderson"
       ],
@@ -2866,8 +2550,6 @@
       "time": "3:15 PM",
       "driverId": null,
       "riderIds": [
-        "kid-eli",
-        "kid-emily",
         "kid-blake"
       ],
       "excludedIds": [
@@ -2884,8 +2566,6 @@
       "time": "7:30 AM",
       "driverId": "drv-lucas",
       "riderIds": [
-        "kid-eli",
-        "kid-emily",
         "kid-blake"
       ],
       "excludedIds": [
@@ -2902,8 +2582,6 @@
       "time": "3:15 PM",
       "driverId": "drv-dee",
       "riderIds": [
-        "kid-eli",
-        "kid-emily",
         "kid-blake",
         "kid-anderson"
       ],
@@ -2919,8 +2597,6 @@
       "time": "7:30 AM",
       "driverId": "drv-lucas",
       "riderIds": [
-        "kid-eli",
-        "kid-emily",
         "kid-blake",
         "kid-anderson"
       ],
@@ -2936,8 +2612,6 @@
       "time": "3:15 PM",
       "driverId": "drv-lucas",
       "riderIds": [
-        "kid-eli",
-        "kid-emily",
         "kid-blake"
       ],
       "excludedIds": [
@@ -2954,8 +2628,6 @@
       "time": "7:30 AM",
       "driverId": null,
       "riderIds": [
-        "kid-eli",
-        "kid-emily",
         "kid-blake"
       ],
       "excludedIds": [
@@ -2972,8 +2644,6 @@
       "time": "3:15 PM",
       "driverId": null,
       "riderIds": [
-        "kid-eli",
-        "kid-emily",
         "kid-blake"
       ],
       "excludedIds": [

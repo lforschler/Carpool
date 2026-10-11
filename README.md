@@ -7,7 +7,7 @@ School carpool coordination for a small family group.
 - **Week + Agenda** hybrid schedule (main product surface)
 - **Auth.js** email/password family accounts
 - **Postgres + Prisma** for families, kids, addresses, trips
-- Sample sheet seeded into the DB
+- Sample sheet (**2027** tab) seeded into the DB
 - Explore C/D concepts still under `/explore` (local mock)
 
 SMS (Twilio) is **not** in this PR.
@@ -49,9 +49,17 @@ postgresql://carpool:carpool@127.0.0.1:5432/carpool?schema=public
 ```bash
 npm install
 npx prisma migrate deploy   # or: npm run db:migrate
-npm run db:seed             # loads sample sheet + demo users
+npm run db:seed             # loads 2027-tab schedule + demo users
 npm run dev
 ```
+
+Regenerate `src/lib/mock-schedule.json` from the Google Sheet **2027** tab (not the spring **2026** tab):
+
+```bash
+npm run db:import-sheet     # downloads xlsx, or: python3 scripts/import-sheet-2027.py --xlsx scripts/carpool-schedule.xlsx
+npm run db:seed
+```
+
 
 Open http://localhost:3000/week → redirects to sign-in if needed.
 
