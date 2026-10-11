@@ -53,12 +53,28 @@ export function ScheduleProvider({ children }: { children: ReactNode }) {
 
   const loadFromDb = useCallback(async () => {
     const res = await fetch("/api/schedule");
-    if (!res.ok) throw new Error("Failed to load schedule");
+    if (!res.ok) {
+      let hint = "Failed to load schedule";
+      try {
+        const body = (await res.json()) as { hint?: string; error?: string };
+        if (body.hint) hint = body.hint;
+        else if (body.error) hint = body.error;
+      } catch {
+        /* ignore */
+      }
+      throw new Error(hint);
+    }
     const json = (await res.json()) as ScheduleData;
     setData(json);
     setTrips(json.trips.map(normalizeTrip));
     setPersistMode("db");
-    setError(null);
+    if (!json.trips.length) {
+      setError(
+        "Schedule is empty for this account. Sign out and sign back in, or ask for a re-seed.",
+      );
+    } else {
+      setError(null);
+    }
   }, []);
 
   const loadLocal = useCallback(() => {

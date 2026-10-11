@@ -16,7 +16,7 @@ export function AppShell({
   tab: (typeof TABS)[number]["href"] | "/family";
   children: React.ReactNode;
 }) {
-  const { resetTrips, hydrated, persistMode } = useSchedule();
+  const { resetTrips, hydrated, persistMode, error } = useSchedule();
   const { data: session } = useSession();
 
   return (
@@ -109,6 +109,13 @@ export function AppShell({
           </div>
         </div>
       </header>
+
+      {error && (
+        <div className="border-b border-[var(--warn)]/30 bg-[var(--warn-soft)] px-3 py-2 text-center text-sm font-semibold text-[var(--warn)] sm:px-4">
+          {error}
+          {session?.user ? " Use Sign out, then sign in again." : null}
+        </div>
+      )}
 
       <main className="mx-auto max-w-6xl px-3 py-4 sm:px-4 sm:py-8">{children}</main>
 

@@ -9,6 +9,20 @@ const credentialsSchema = z.object({
   password: z.string().min(6),
 });
 
+async function membershipForUserId(userId: string) {
+  const user = await prisma.user.findUnique({
+    where: { id: userId },
+    include: {
+      membership: { include: { family: true } },
+    },
+  });
+  if (!user) return null;
+  return {
+    familyId: user.membership?.familyId ?? null,
+    groupId: user.membership?.family.groupId ?? null,
+  };
+}
+
 export const { handlers, auth, signIn, signOut } = NextAuth({
   trustHost: true,
   session: { strategy: "jwt" },
@@ -54,6 +68,29 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
         token.userId = user.id!;
         token.familyId = (user as { familyId?: string | null }).familyId ?? null;
         token.groupId = (user as { groupId?: string | null }).groupId ?? null;
+        return token;
+      }
+
+      // Re-seed / upsert can rotate family/group ids. Refresh from DB so Week
+      // does not silently load an empty schedule for a stale groupId.
+      if (token.userId) {
+        try {
+          const membership = await membershipForUserId(token.userId as string);
+          if (!membership) {
+            return {
+              ...token,
+              userId: undefined,
+              familyId: null,
+              groupId: null,
+              email: undefined,
+              name: undefined,
+            };
+          }
+          token.familyId = membership.familyId;
+          token.groupId = membership.groupId;
+        } catch {
+          /* keep prior token if DB briefly unavailable */
+        }
       }
       return token;
     },
