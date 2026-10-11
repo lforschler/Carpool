@@ -4,7 +4,7 @@ School carpool coordination for a small family group.
 
 ## What’s in this branch
 
-- **Week + Agenda** hybrid schedule (main product surface)
+- **Week + Agenda + Month** hybrid schedule (main product surface)
 - **Auth.js** email/password family accounts
 - **Postgres + Prisma** for families, kids, addresses, trips
 - Sample sheet (**2027** tab) seeded into the DB
@@ -76,7 +76,7 @@ Password for all: `carpool123`
 | Route | Role |
 |-------|------|
 | `/login`, `/signup` | Family accounts |
-| `/week`, `/agenda` | Schedule hybrid (DB-backed when signed in) |
+| `/week`, `/agenda`, `/month` | Schedule hybrid (DB-backed when signed in) |
 | `/family` | Kids + home address for signed-in family |
 | `/explore` | Archive / C–D reference concepts |
 

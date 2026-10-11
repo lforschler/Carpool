@@ -7,6 +7,7 @@ import { useSchedule } from "@/lib/schedule-store";
 const TABS = [
   { href: "/week", label: "Week", short: "Week" },
   { href: "/agenda", label: "Agenda", short: "Agenda" },
+  { href: "/month", label: "Month", short: "Month" },
 ] as const;
 
 export function AppShell({
@@ -123,7 +124,7 @@ export function AppShell({
         className="fixed inset-x-0 bottom-0 z-30 border-t border-white/60 bg-[color-mix(in_oklab,var(--paper)_88%,transparent)] pb-[env(safe-area-inset-bottom)] shadow-[0_-10px_30px_-22px_rgba(20,35,31,0.45)] backdrop-blur-xl sm:hidden"
         aria-label="Schedule"
       >
-        <div className="grid grid-cols-2">
+        <div className="grid grid-cols-3">
           {TABS.map((t) => {
             const active = tab === t.href;
             return (

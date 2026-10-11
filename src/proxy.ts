@@ -8,6 +8,8 @@ export default auth((req) => {
     pathname.startsWith("/week/") ||
     pathname === "/agenda" ||
     pathname.startsWith("/agenda/") ||
+    pathname === "/month" ||
+    pathname.startsWith("/month/") ||
     pathname === "/family" ||
     pathname.startsWith("/family/");
 
@@ -22,5 +24,10 @@ export default auth((req) => {
 });
 
 export const config = {
-  matcher: ["/week/:path*", "/agenda/:path*", "/family/:path*"],
+  matcher: [
+    "/week/:path*",
+    "/agenda/:path*",
+    "/month/:path*",
+    "/family/:path*",
+  ],
 };
