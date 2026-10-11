@@ -5,6 +5,12 @@ Source sheet:
   https://docs.google.com/spreadsheets/d/1A_w9-kkoFYO_WLQZaS2KQ6lsJ6pn3nsExurtwoBtems/edit
 Tab name: 2027 (gid=0). Fall semester; weekdays align to calendar year 2026
 (school year 2026–27). The '2026' tab is spring and is intentionally ignored.
+
+Rider rules:
+  - Default riders: Blake + Anderson (Andy). Sheet "A"/"Andy" = Anderson Brewer.
+  - "(No A)" means Anderson/Andy is not riding.
+  - Eli and Emily are not carpool riders (Weis remains a contact/driver family).
+  - Nico may appear as a guest rider from sheet notes.
 """
 
 from __future__ import annotations
@@ -49,15 +55,16 @@ DRIVER_MAP = {
     "nicola": "drv-nicola",
 }
 
-CORE_KIDS = ["kid-eli", "kid-emily", "kid-blake", "kid-anderson"]
+# Default carpool riders. Eli/Emily (Weis) are contacts-only — not riders.
+# Sheet "Andy" / "A" = Anderson Brewer (same person).
+CORE_KIDS = ["kid-blake", "kid-anderson"]
+ACTIVE_KID_IDS = {"kid-blake", "kid-anderson", "kid-nico"}
 KID_ALIASES = {
     "a": "kid-anderson",
     "anderson": "kid-anderson",
-    "eli": "kid-eli",
-    "emily": "kid-emily",
+    "andy": "kid-anderson",
     "blake": "kid-blake",
     "nico": "kid-nico",
-    "andy": "kid-andy",
 }
 
 FAMILIES = [
@@ -68,7 +75,7 @@ FAMILIES = [
         "phone": "417-612-3768",
         "address": "5355 S. Westwood Ave",
         "driverId": "drv-jill",
-        "kidIds": ["kid-eli", "kid-emily"],
+        "kidIds": [],
     },
     {
         "id": "fam-lucas",
@@ -91,27 +98,24 @@ FAMILIES = [
 ]
 
 KIDS = [
-    {"id": "kid-eli", "name": "Eli", "familyId": "fam-jill", "short": "Eli"},
-    {"id": "kid-emily", "name": "Emily", "familyId": "fam-jill", "short": "Emily"},
-    {"id": "kid-blake", "name": "Blake", "familyId": "fam-lucas", "short": "Blake"},
+    {
+        "id": "kid-blake",
+        "name": "Blake",
+        "familyId": "fam-lucas",
+        "short": "Blake",
+    },
     {
         "id": "kid-anderson",
         "name": "Anderson",
         "familyId": "fam-dee",
-        "short": "A",
+        "short": "Andy",
+        "note": "Sheet 'A' / 'Andy' = Anderson Brewer",
     },
     {
         "id": "kid-nico",
         "name": "Nico",
         "familyId": None,
         "short": "Nico",
-        "note": "Guest rider from sheet",
-    },
-    {
-        "id": "kid-andy",
-        "name": "Andy",
-        "familyId": None,
-        "short": "Andy",
         "note": "Guest rider from sheet",
     },
 ]
@@ -190,7 +194,7 @@ def parse_cell(raw: str) -> dict:
             break
 
     excluded: list[str] = []
-    # (No A), (no A), (No A or Blake), (no eli & Emily), etc.
+    # (No A) / (no Andy) = Anderson not riding. Also (No Blake), etc.
     for m in re.finditer(r"\(\s*no\s+([^)]+)\)", lower):
         chunk = m.group(1)
         chunk = chunk.replace(" or ", " ").replace("&", " ").replace(",", " ")
@@ -198,16 +202,16 @@ def parse_cell(raw: str) -> dict:
             token = token.strip()
             if token in KID_ALIASES:
                 kid = KID_ALIASES[token]
-                if kid not in excluded:
+                if kid in ACTIVE_KID_IDS and kid not in excluded:
                     excluded.append(kid)
 
+    # Only Nico is a true guest add. Sheet "Andy" = Anderson (core rider).
     guests: list[str] = []
-    for guest_name, kid_id in (("nico", "kid-nico"), ("andy", "kid-andy")):
-        if re.search(rf"\b{guest_name}\b", lower):
-            guests.append(kid_id)
+    if re.search(r"\bnico\b", lower) and "kid-nico" not in excluded:
+        guests.append("kid-nico")
 
     riders = [k for k in CORE_KIDS if k not in excluded] + [
-        g for g in guests if g not in excluded
+        g for g in guests if g not in excluded and g not in CORE_KIDS
     ]
 
     status = "unassigned" if driver_id is None else "planned"
