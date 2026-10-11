@@ -11,6 +11,7 @@ import {
 } from "react";
 import { useSession } from "next-auth/react";
 import mock from "./mock-schedule.json";
+import { normalizeTrip } from "./trip-normalize";
 import type { ScheduleData, Trip, TripStatus } from "./types";
 
 type ScheduleContextValue = {
@@ -27,19 +28,6 @@ type ScheduleContextValue = {
 const ScheduleContext = createContext<ScheduleContextValue | null>(null);
 const baseData = mock as ScheduleData;
 const LOCAL_KEY = "carpool-explore-trips-v1";
-
-function normalizeTrip(trip: Trip): Trip {
-  if (trip.noSchool) {
-    return { ...trip, status: "cancelled", driverId: null, riderIds: [] };
-  }
-  if (!trip.driverId && trip.status !== "cancelled") {
-    return { ...trip, status: "unassigned" };
-  }
-  if (trip.driverId && trip.status === "unassigned") {
-    return { ...trip, status: "planned" };
-  }
-  return trip;
-}
 
 export function ScheduleProvider({ children }: { children: ReactNode }) {
   const { status } = useSession();

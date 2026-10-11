@@ -2,7 +2,8 @@ import { NextResponse } from "next/server";
 import { z } from "zod";
 import { auth } from "@/lib/auth";
 import { prisma } from "@/lib/prisma";
-import { mapTrip, toDbStatus } from "@/lib/schedule-api";
+import { mapTrip } from "@/lib/schedule-api";
+import { resolveTripPatchStatus } from "@/lib/trip-normalize";
 import type { TripStatus } from "@/lib/types";
 
 const patchSchema = z.object({
@@ -37,11 +38,12 @@ export async function PATCH(
   }
 
   const data = body.data;
-  let status = existing.status;
-  if (data.status) status = toDbStatus(data.status as TripStatus);
-  if (data.noSchool) status = "CANCELLED";
-  else if (data.driverId === null) status = "UNASSIGNED";
-  else if (data.driverId && status === "UNASSIGNED") status = "PLANNED";
+  const status = resolveTripPatchStatus({
+    existingStatus: existing.status,
+    status: data.status as TripStatus | undefined,
+    noSchool: data.noSchool,
+    driverId: data.driverId,
+  });
 
   await prisma.$transaction(async (tx) => {
     await tx.trip.update({
