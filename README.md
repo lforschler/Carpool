@@ -11,6 +11,8 @@ Throwaway prototypes to compare four schedule surfaces against the real sample G
 ```bash
 npm install
 npm run dev
+# or production-style:
+# npm run build && npm run start
 ```
 
 Open [http://localhost:3000/explore](http://localhost:3000/explore).
