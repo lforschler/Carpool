@@ -1,6 +1,7 @@
 {
-  "source": "https://docs.google.com/spreadsheets/d/1A_w9-kkoFYO_WLQZaS2KQ6lsJ6pn3nsExurtwoBtems/edit?usp=drivesdk",
-  "schoolYearLabel": "Fall 2026 (from sample sheet)",
+  "source": "https://docs.google.com/spreadsheets/d/1A_w9-kkoFYO_WLQZaS2KQ6lsJ6pn3nsExurtwoBtems/edit?usp=drivesdk#gid=0",
+  "sheetTab": "2027",
+  "schoolYearLabel": "Fall 2026 / school year 2026\u20132027 (Google Sheet tab '2027')",
   "families": [
     {
       "id": "fam-jill",
@@ -1875,7 +1876,7 @@
       ],
       "status": "planned",
       "noSchool": false,
-      "sheetNote": "Lucas No A)"
+      "sheetNote": "Lucas (No A)"
     },
     {
       "id": "trip-2026-11-04-pm",

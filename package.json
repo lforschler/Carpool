@@ -10,6 +10,7 @@
     "db:migrate": "prisma migrate deploy",
     "db:migrate:dev": "prisma migrate dev",
     "db:seed": "tsx prisma/seed.ts",
+    "db:import-sheet": "python3 scripts/import-sheet-2027.py",
     "db:push": "prisma db push",
     "postinstall": "prisma generate"
   },

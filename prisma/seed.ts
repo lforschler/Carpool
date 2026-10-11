@@ -137,7 +137,15 @@ async function main() {
     }
   }
 
+  const dates = (mock.trips as MockTrip[]).map((t) => t.date).sort();
   console.log("Seeded Westwood Carpool");
+  console.log(
+    `Schedule: ${mock.schoolYearLabel ?? "sample"} — ${mock.trips.length} trips` +
+      (dates.length ? ` (${dates[0]} → ${dates[dates.length - 1]})` : ""),
+  );
+  if (mock.sheetTab) {
+    console.log(`Sheet tab: ${mock.sheetTab}`);
+  }
   console.log("Demo logins (password: carpool123):");
   for (const u of users) {
     console.log(`  ${u.user.email}`);
