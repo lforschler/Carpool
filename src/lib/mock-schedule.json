@@ -1,0 +1,2987 @@
+{
+  "source": "https://docs.google.com/spreadsheets/d/1A_w9-kkoFYO_WLQZaS2KQ6lsJ6pn3nsExurtwoBtems/edit?usp=drivesdk",
+  "schoolYearLabel": "Fall 2026 (from sample sheet)",
+  "families": [
+    {
+      "id": "fam-jill",
+      "name": "Weis",
+      "parentName": "Jill Weis",
+      "phone": "417-612-3768",
+      "address": "5355 S. Westwood Ave",
+      "driverId": "drv-jill",
+      "kidIds": [
+        "kid-eli",
+        "kid-emily"
+      ]
+    },
+    {
+      "id": "fam-lucas",
+      "name": "Forschler",
+      "parentName": "Lucas Forschler",
+      "phone": "408-368-5949",
+      "address": "4830 S. Wellington Drive",
+      "driverId": "drv-lucas",
+      "kidIds": [
+        "kid-blake"
+      ]
+    },
+    {
+      "id": "fam-dee",
+      "name": "Brewer",
+      "parentName": "Dee Brewer",
+      "phone": "618-367-1329",
+      "address": "3132 W. Wick St",
+      "driverId": "drv-dee",
+      "kidIds": [
+        "kid-anderson"
+      ]
+    }
+  ],
+  "kids": [
+    {
+      "id": "kid-eli",
+      "name": "Eli",
+      "familyId": "fam-jill",
+      "short": "Eli"
+    },
+    {
+      "id": "kid-emily",
+      "name": "Emily",
+      "familyId": "fam-jill",
+      "short": "Emily"
+    },
+    {
+      "id": "kid-blake",
+      "name": "Blake",
+      "familyId": "fam-lucas",
+      "short": "Blake"
+    },
+    {
+      "id": "kid-anderson",
+      "name": "Anderson",
+      "familyId": "fam-dee",
+      "short": "A"
+    },
+    {
+      "id": "kid-nico",
+      "name": "Nico",
+      "familyId": null,
+      "short": "Nico",
+      "note": "Guest rider from sheet"
+    },
+    {
+      "id": "kid-andy",
+      "name": "Andy",
+      "familyId": null,
+      "short": "Andy",
+      "note": "Guest rider from sheet"
+    }
+  ],
+  "drivers": [
+    {
+      "id": "drv-jill",
+      "name": "Jill",
+      "fullName": "Jill Weis",
+      "familyId": "fam-jill",
+      "seatCapacity": 5
+    },
+    {
+      "id": "drv-lucas",
+      "name": "Lucas",
+      "fullName": "Lucas Forschler",
+      "familyId": "fam-lucas",
+      "seatCapacity": 5
+    },
+    {
+      "id": "drv-dee",
+      "name": "Dee",
+      "fullName": "Dee Brewer",
+      "familyId": "fam-dee",
+      "seatCapacity": 5
+    },
+    {
+      "id": "drv-nicola",
+      "name": "Nicola",
+      "fullName": "Nicola",
+      "familyId": null,
+      "seatCapacity": 5
+    }
+  ],
+  "trips": [
+    {
+      "id": "trip-2026-08-25-am",
+      "date": "2026-08-25",
+      "direction": "AM",
+      "time": "7:30 AM",
+      "driverId": "drv-lucas",
+      "riderIds": [
+        "kid-eli",
+        "kid-emily",
+        "kid-blake",
+        "kid-anderson"
+      ],
+      "excludedIds": [],
+      "status": "planned",
+      "noSchool": false,
+      "sheetNote": "Lucas"
+    },
+    {
+      "id": "trip-2026-08-25-pm",
+      "date": "2026-08-25",
+      "direction": "PM",
+      "time": "3:15 PM",
+      "driverId": null,
+      "riderIds": [
+        "kid-eli",
+        "kid-emily",
+        "kid-blake"
+      ],
+      "excludedIds": [
+        "kid-anderson"
+      ],
+      "status": "unassigned",
+      "noSchool": false,
+      "sheetNote": "(No A)"
+    },
+    {
+      "id": "trip-2026-08-26-am",
+      "date": "2026-08-26",
+      "direction": "AM",
+      "time": "7:30 AM",
+      "driverId": "drv-lucas",
+      "riderIds": [
+        "kid-eli",
+        "kid-emily",
+        "kid-blake"
+      ],
+      "excludedIds": [
+        "kid-anderson"
+      ],
+      "status": "planned",
+      "noSchool": false,
+      "sheetNote": "Lucas (No A)"
+    },
+    {
+      "id": "trip-2026-08-26-pm",
+      "date": "2026-08-26",
+      "direction": "PM",
+      "time": "3:15 PM",
+      "driverId": "drv-dee",
+      "riderIds": [
+        "kid-eli",
+        "kid-emily",
+        "kid-blake",
+        "kid-anderson"
+      ],
+      "excludedIds": [],
+      "status": "planned",
+      "noSchool": false,
+      "sheetNote": "Dee"
+    },
+    {
+      "id": "trip-2026-08-27-am",
+      "date": "2026-08-27",
+      "direction": "AM",
+      "time": "7:30 AM",
+      "driverId": "drv-lucas",
+      "riderIds": [
+        "kid-eli",
+        "kid-emily",
+        "kid-blake",
+        "kid-anderson"
+      ],
+      "excludedIds": [],
+      "status": "planned",
+      "noSchool": false,
+      "sheetNote": "Lucas"
+    },
+    {
+      "id": "trip-2026-08-27-pm",
+      "date": "2026-08-27",
+      "direction": "PM",
+      "time": "3:15 PM",
+      "driverId": null,
+      "riderIds": [
+        "kid-eli",
+        "kid-emily",
+        "kid-blake"
+      ],
+      "excludedIds": [
+        "kid-anderson"
+      ],
+      "status": "unassigned",
+      "noSchool": false,
+      "sheetNote": "(No A)"
+    },
+    {
+      "id": "trip-2026-08-28-am",
+      "date": "2026-08-28",
+      "direction": "AM",
+      "time": "7:30 AM",
+      "driverId": "drv-lucas",
+      "riderIds": [
+        "kid-eli",
+        "kid-emily",
+        "kid-blake"
+      ],
+      "excludedIds": [
+        "kid-anderson"
+      ],
+      "status": "planned",
+      "noSchool": false,
+      "sheetNote": "Lucas (No A)"
+    },
+    {
+      "id": "trip-2026-08-28-pm",
+      "date": "2026-08-28",
+      "direction": "PM",
+      "time": "3:15 PM",
+      "driverId": null,
+      "riderIds": [
+        "kid-eli",
+        "kid-emily",
+        "kid-blake"
+      ],
+      "excludedIds": [
+        "kid-anderson"
+      ],
+      "status": "unassigned",
+      "noSchool": false,
+      "sheetNote": "(No A)"
+    },
+    {
+      "id": "trip-2026-08-31-am",
+      "date": "2026-08-31",
+      "direction": "AM",
+      "time": "7:30 AM",
+      "driverId": "drv-lucas",
+      "riderIds": [
+        "kid-eli",
+        "kid-emily",
+        "kid-blake"
+      ],
+      "excludedIds": [
+        "kid-anderson"
+      ],
+      "status": "planned",
+      "noSchool": false,
+      "sheetNote": "Lucas (No A)"
+    },
+    {
+      "id": "trip-2026-08-31-pm",
+      "date": "2026-08-31",
+      "direction": "PM",
+      "time": "3:15 PM",
+      "driverId": "drv-dee",
+      "riderIds": [
+        "kid-eli",
+        "kid-emily",
+        "kid-blake",
+        "kid-anderson"
+      ],
+      "excludedIds": [],
+      "status": "planned",
+      "noSchool": false,
+      "sheetNote": "Dee"
+    },
+    {
+      "id": "trip-2026-09-01-am",
+      "date": "2026-09-01",
+      "direction": "AM",
+      "time": "7:30 AM",
+      "driverId": "drv-lucas",
+      "riderIds": [
+        "kid-eli",
+        "kid-emily",
+        "kid-blake",
+        "kid-anderson"
+      ],
+      "excludedIds": [],
+      "status": "planned",
+      "noSchool": false,
+      "sheetNote": "Lucas"
+    },
+    {
+      "id": "trip-2026-09-01-pm",
+      "date": "2026-09-01",
+      "direction": "PM",
+      "time": "3:15 PM",
+      "driverId": null,
+      "riderIds": [
+        "kid-eli",
+        "kid-emily",
+        "kid-blake"
+      ],
+      "excludedIds": [
+        "kid-anderson"
+      ],
+      "status": "unassigned",
+      "noSchool": false,
+      "sheetNote": "(No A)"
+    },
+    {
+      "id": "trip-2026-09-02-am",
+      "date": "2026-09-02",
+      "direction": "AM",
+      "time": "7:30 AM",
+      "driverId": "drv-lucas",
+      "riderIds": [
+        "kid-eli",
+        "kid-emily",
+        "kid-blake"
+      ],
+      "excludedIds": [
+        "kid-anderson"
+      ],
+      "status": "planned",
+      "noSchool": false,
+      "sheetNote": "Lucas (No A)"
+    },
+    {
+      "id": "trip-2026-09-02-pm",
+      "date": "2026-09-02",
+      "direction": "PM",
+      "time": "3:15 PM",
+      "driverId": "drv-dee",
+      "riderIds": [
+        "kid-eli",
+        "kid-emily",
+        "kid-blake",
+        "kid-anderson"
+      ],
+      "excludedIds": [],
+      "status": "planned",
+      "noSchool": false,
+      "sheetNote": "Dee"
+    },
+    {
+      "id": "trip-2026-09-03-am",
+      "date": "2026-09-03",
+      "direction": "AM",
+      "time": "7:30 AM",
+      "driverId": "drv-lucas",
+      "riderIds": [
+        "kid-eli",
+        "kid-emily",
+        "kid-blake",
+        "kid-anderson"
+      ],
+      "excludedIds": [],
+      "status": "planned",
+      "noSchool": false,
+      "sheetNote": "Lucas"
+    },
+    {
+      "id": "trip-2026-09-03-pm",
+      "date": "2026-09-03",
+      "direction": "PM",
+      "time": "3:15 PM",
+      "driverId": null,
+      "riderIds": [
+        "kid-eli",
+        "kid-emily",
+        "kid-blake"
+      ],
+      "excludedIds": [
+        "kid-anderson"
+      ],
+      "status": "unassigned",
+      "noSchool": false,
+      "sheetNote": "(No A)"
+    },
+    {
+      "id": "trip-2026-09-04-am",
+      "date": "2026-09-04",
+      "direction": "AM",
+      "time": "7:30 AM",
+      "driverId": "drv-lucas",
+      "riderIds": [
+        "kid-eli",
+        "kid-emily",
+        "kid-blake"
+      ],
+      "excludedIds": [
+        "kid-anderson"
+      ],
+      "status": "planned",
+      "noSchool": false,
+      "sheetNote": "Lucas (No A)"
+    },
+    {
+      "id": "trip-2026-09-04-pm",
+      "date": "2026-09-04",
+      "direction": "PM",
+      "time": "3:15 PM",
+      "driverId": "drv-dee",
+      "riderIds": [
+        "kid-eli",
+        "kid-emily",
+        "kid-blake",
+        "kid-anderson"
+      ],
+      "excludedIds": [],
+      "status": "planned",
+      "noSchool": false,
+      "sheetNote": "Dee"
+    },
+    {
+      "id": "trip-2026-09-07-am",
+      "date": "2026-09-07",
+      "direction": "AM",
+      "time": "7:30 AM",
+      "driverId": null,
+      "riderIds": [],
+      "excludedIds": [],
+      "status": "cancelled",
+      "noSchool": true,
+      "sheetNote": "No School"
+    },
+    {
+      "id": "trip-2026-09-07-pm",
+      "date": "2026-09-07",
+      "direction": "PM",
+      "time": "3:15 PM",
+      "driverId": null,
+      "riderIds": [],
+      "excludedIds": [],
+      "status": "cancelled",
+      "noSchool": true,
+      "sheetNote": "No School"
+    },
+    {
+      "id": "trip-2026-09-08-am",
+      "date": "2026-09-08",
+      "direction": "AM",
+      "time": "7:30 AM",
+      "driverId": "drv-lucas",
+      "riderIds": [
+        "kid-eli",
+        "kid-emily",
+        "kid-blake",
+        "kid-anderson"
+      ],
+      "excludedIds": [],
+      "status": "planned",
+      "noSchool": false,
+      "sheetNote": "Lucas"
+    },
+    {
+      "id": "trip-2026-09-08-pm",
+      "date": "2026-09-08",
+      "direction": "PM",
+      "time": "3:15 PM",
+      "driverId": null,
+      "riderIds": [
+        "kid-eli",
+        "kid-emily",
+        "kid-blake"
+      ],
+      "excludedIds": [
+        "kid-anderson"
+      ],
+      "status": "unassigned",
+      "noSchool": false,
+      "sheetNote": "(No A)"
+    },
+    {
+      "id": "trip-2026-09-09-am",
+      "date": "2026-09-09",
+      "direction": "AM",
+      "time": "7:30 AM",
+      "driverId": "drv-lucas",
+      "riderIds": [
+        "kid-eli",
+        "kid-emily",
+        "kid-blake"
+      ],
+      "excludedIds": [
+        "kid-anderson"
+      ],
+      "status": "planned",
+      "noSchool": false,
+      "sheetNote": "Lucas (No A)"
+    },
+    {
+      "id": "trip-2026-09-09-pm",
+      "date": "2026-09-09",
+      "direction": "PM",
+      "time": "3:15 PM",
+      "driverId": "drv-dee",
+      "riderIds": [
+        "kid-eli",
+        "kid-emily",
+        "kid-blake",
+        "kid-anderson"
+      ],
+      "excludedIds": [],
+      "status": "planned",
+      "noSchool": false,
+      "sheetNote": "Dee"
+    },
+    {
+      "id": "trip-2026-09-10-am",
+      "date": "2026-09-10",
+      "direction": "AM",
+      "time": "7:30 AM",
+      "driverId": "drv-lucas",
+      "riderIds": [
+        "kid-eli",
+        "kid-emily",
+        "kid-blake",
+        "kid-anderson"
+      ],
+      "excludedIds": [],
+      "status": "planned",
+      "noSchool": false,
+      "sheetNote": "Lucas"
+    },
+    {
+      "id": "trip-2026-09-10-pm",
+      "date": "2026-09-10",
+      "direction": "PM",
+      "time": "3:15 PM",
+      "driverId": null,
+      "riderIds": [
+        "kid-eli",
+        "kid-emily",
+        "kid-blake"
+      ],
+      "excludedIds": [
+        "kid-anderson"
+      ],
+      "status": "unassigned",
+      "noSchool": false,
+      "sheetNote": "(No A)"
+    },
+    {
+      "id": "trip-2026-09-11-am",
+      "date": "2026-09-11",
+      "direction": "AM",
+      "time": "7:30 AM",
+      "driverId": "drv-lucas",
+      "riderIds": [
+        "kid-eli",
+        "kid-emily",
+        "kid-blake"
+      ],
+      "excludedIds": [
+        "kid-anderson"
+      ],
+      "status": "planned",
+      "noSchool": false,
+      "sheetNote": "Lucas (No A)"
+    },
+    {
+      "id": "trip-2026-09-11-pm",
+      "date": "2026-09-11",
+      "direction": "PM",
+      "time": "3:15 PM",
+      "driverId": null,
+      "riderIds": [
+        "kid-eli",
+        "kid-emily",
+        "kid-blake"
+      ],
+      "excludedIds": [
+        "kid-anderson"
+      ],
+      "status": "unassigned",
+      "noSchool": false,
+      "sheetNote": "(No A)"
+    },
+    {
+      "id": "trip-2026-09-14-am",
+      "date": "2026-09-14",
+      "direction": "AM",
+      "time": "7:30 AM",
+      "driverId": "drv-lucas",
+      "riderIds": [
+        "kid-eli",
+        "kid-emily",
+        "kid-blake"
+      ],
+      "excludedIds": [
+        "kid-anderson"
+      ],
+      "status": "planned",
+      "noSchool": false,
+      "sheetNote": "Lucas (no A)"
+    },
+    {
+      "id": "trip-2026-09-14-pm",
+      "date": "2026-09-14",
+      "direction": "PM",
+      "time": "3:15 PM",
+      "driverId": "drv-dee",
+      "riderIds": [
+        "kid-eli",
+        "kid-emily",
+        "kid-blake",
+        "kid-anderson"
+      ],
+      "excludedIds": [],
+      "status": "planned",
+      "noSchool": false,
+      "sheetNote": "Dee"
+    },
+    {
+      "id": "trip-2026-09-15-am",
+      "date": "2026-09-15",
+      "direction": "AM",
+      "time": "7:30 AM",
+      "driverId": "drv-lucas",
+      "riderIds": [
+        "kid-eli",
+        "kid-emily",
+        "kid-blake",
+        "kid-anderson"
+      ],
+      "excludedIds": [],
+      "status": "planned",
+      "noSchool": false,
+      "sheetNote": "Lucas"
+    },
+    {
+      "id": "trip-2026-09-15-pm",
+      "date": "2026-09-15",
+      "direction": "PM",
+      "time": "3:15 PM",
+      "driverId": null,
+      "riderIds": [
+        "kid-eli",
+        "kid-emily",
+        "kid-blake"
+      ],
+      "excludedIds": [
+        "kid-anderson"
+      ],
+      "status": "unassigned",
+      "noSchool": false,
+      "sheetNote": "(No A)"
+    },
+    {
+      "id": "trip-2026-09-16-am",
+      "date": "2026-09-16",
+      "direction": "AM",
+      "time": "7:30 AM",
+      "driverId": "drv-lucas",
+      "riderIds": [
+        "kid-eli",
+        "kid-emily",
+        "kid-blake"
+      ],
+      "excludedIds": [
+        "kid-anderson"
+      ],
+      "status": "planned",
+      "noSchool": false,
+      "sheetNote": "Lucas (No A)"
+    },
+    {
+      "id": "trip-2026-09-16-pm",
+      "date": "2026-09-16",
+      "direction": "PM",
+      "time": "3:15 PM",
+      "driverId": "drv-dee",
+      "riderIds": [
+        "kid-eli",
+        "kid-emily",
+        "kid-blake",
+        "kid-anderson"
+      ],
+      "excludedIds": [],
+      "status": "planned",
+      "noSchool": false,
+      "sheetNote": "Dee"
+    },
+    {
+      "id": "trip-2026-09-17-am",
+      "date": "2026-09-17",
+      "direction": "AM",
+      "time": "7:30 AM",
+      "driverId": "drv-lucas",
+      "riderIds": [
+        "kid-eli",
+        "kid-emily",
+        "kid-blake",
+        "kid-anderson"
+      ],
+      "excludedIds": [],
+      "status": "planned",
+      "noSchool": false,
+      "sheetNote": "Lucas"
+    },
+    {
+      "id": "trip-2026-09-17-pm",
+      "date": "2026-09-17",
+      "direction": "PM",
+      "time": "3:15 PM",
+      "driverId": null,
+      "riderIds": [
+        "kid-eli",
+        "kid-emily",
+        "kid-blake"
+      ],
+      "excludedIds": [
+        "kid-anderson"
+      ],
+      "status": "unassigned",
+      "noSchool": false,
+      "sheetNote": "(No A)"
+    },
+    {
+      "id": "trip-2026-09-18-am",
+      "date": "2026-09-18",
+      "direction": "AM",
+      "time": "7:30 AM",
+      "driverId": "drv-lucas",
+      "riderIds": [
+        "kid-eli",
+        "kid-emily",
+        "kid-blake"
+      ],
+      "excludedIds": [
+        "kid-anderson"
+      ],
+      "status": "planned",
+      "noSchool": false,
+      "sheetNote": "Lucas (No A)"
+    },
+    {
+      "id": "trip-2026-09-18-pm",
+      "date": "2026-09-18",
+      "direction": "PM",
+      "time": "3:15 PM",
+      "driverId": "drv-dee",
+      "riderIds": [
+        "kid-eli",
+        "kid-emily",
+        "kid-blake",
+        "kid-anderson"
+      ],
+      "excludedIds": [],
+      "status": "planned",
+      "noSchool": false,
+      "sheetNote": "Dee"
+    },
+    {
+      "id": "trip-2026-09-21-am",
+      "date": "2026-09-21",
+      "direction": "AM",
+      "time": "7:30 AM",
+      "driverId": "drv-lucas",
+      "riderIds": [
+        "kid-eli",
+        "kid-emily",
+        "kid-blake",
+        "kid-anderson"
+      ],
+      "excludedIds": [],
+      "status": "planned",
+      "noSchool": false,
+      "sheetNote": "Lucas"
+    },
+    {
+      "id": "trip-2026-09-21-pm",
+      "date": "2026-09-21",
+      "direction": "PM",
+      "time": "3:15 PM",
+      "driverId": "drv-dee",
+      "riderIds": [
+        "kid-eli",
+        "kid-emily",
+        "kid-blake",
+        "kid-anderson"
+      ],
+      "excludedIds": [],
+      "status": "planned",
+      "noSchool": false,
+      "sheetNote": "Dee"
+    },
+    {
+      "id": "trip-2026-09-22-am",
+      "date": "2026-09-22",
+      "direction": "AM",
+      "time": "7:30 AM",
+      "driverId": "drv-lucas",
+      "riderIds": [
+        "kid-eli",
+        "kid-emily",
+        "kid-blake",
+        "kid-anderson"
+      ],
+      "excludedIds": [],
+      "status": "planned",
+      "noSchool": false,
+      "sheetNote": "Lucas"
+    },
+    {
+      "id": "trip-2026-09-22-pm",
+      "date": "2026-09-22",
+      "direction": "PM",
+      "time": "3:15 PM",
+      "driverId": null,
+      "riderIds": [
+        "kid-eli",
+        "kid-emily",
+        "kid-blake"
+      ],
+      "excludedIds": [
+        "kid-anderson"
+      ],
+      "status": "unassigned",
+      "noSchool": false,
+      "sheetNote": "(No A)"
+    },
+    {
+      "id": "trip-2026-09-23-am",
+      "date": "2026-09-23",
+      "direction": "AM",
+      "time": "7:30 AM",
+      "driverId": "drv-lucas",
+      "riderIds": [
+        "kid-eli",
+        "kid-emily",
+        "kid-blake"
+      ],
+      "excludedIds": [
+        "kid-anderson"
+      ],
+      "status": "planned",
+      "noSchool": false,
+      "sheetNote": "Lucas (No A)"
+    },
+    {
+      "id": "trip-2026-09-23-pm",
+      "date": "2026-09-23",
+      "direction": "PM",
+      "time": "3:15 PM",
+      "driverId": "drv-dee",
+      "riderIds": [
+        "kid-eli",
+        "kid-emily",
+        "kid-blake",
+        "kid-anderson"
+      ],
+      "excludedIds": [],
+      "status": "planned",
+      "noSchool": false,
+      "sheetNote": "Dee"
+    },
+    {
+      "id": "trip-2026-09-24-am",
+      "date": "2026-09-24",
+      "direction": "AM",
+      "time": "7:30 AM",
+      "driverId": "drv-lucas",
+      "riderIds": [
+        "kid-eli",
+        "kid-emily",
+        "kid-blake",
+        "kid-anderson"
+      ],
+      "excludedIds": [],
+      "status": "planned",
+      "noSchool": false,
+      "sheetNote": "Lucas"
+    },
+    {
+      "id": "trip-2026-09-24-pm",
+      "date": "2026-09-24",
+      "direction": "PM",
+      "time": "3:15 PM",
+      "driverId": null,
+      "riderIds": [
+        "kid-eli",
+        "kid-emily",
+        "kid-blake"
+      ],
+      "excludedIds": [
+        "kid-anderson"
+      ],
+      "status": "unassigned",
+      "noSchool": false,
+      "sheetNote": "(No A)"
+    },
+    {
+      "id": "trip-2026-09-25-am",
+      "date": "2026-09-25",
+      "direction": "AM",
+      "time": "7:30 AM",
+      "driverId": "drv-lucas",
+      "riderIds": [
+        "kid-eli",
+        "kid-emily",
+        "kid-blake"
+      ],
+      "excludedIds": [
+        "kid-anderson"
+      ],
+      "status": "planned",
+      "noSchool": false,
+      "sheetNote": "Lucas (No A)"
+    },
+    {
+      "id": "trip-2026-09-25-pm",
+      "date": "2026-09-25",
+      "direction": "PM",
+      "time": "3:15 PM",
+      "driverId": null,
+      "riderIds": [
+        "kid-eli",
+        "kid-emily",
+        "kid-blake"
+      ],
+      "excludedIds": [
+        "kid-anderson"
+      ],
+      "status": "unassigned",
+      "noSchool": false,
+      "sheetNote": "(No A)"
+    },
+    {
+      "id": "trip-2026-09-28-am",
+      "date": "2026-09-28",
+      "direction": "AM",
+      "time": "7:30 AM",
+      "driverId": "drv-lucas",
+      "riderIds": [
+        "kid-eli",
+        "kid-emily",
+        "kid-blake"
+      ],
+      "excludedIds": [
+        "kid-anderson"
+      ],
+      "status": "planned",
+      "noSchool": false,
+      "sheetNote": "Lucas (No A)"
+    },
+    {
+      "id": "trip-2026-09-28-pm",
+      "date": "2026-09-28",
+      "direction": "PM",
+      "time": "3:15 PM",
+      "driverId": "drv-dee",
+      "riderIds": [
+        "kid-eli",
+        "kid-emily",
+        "kid-blake",
+        "kid-anderson"
+      ],
+      "excludedIds": [],
+      "status": "planned",
+      "noSchool": false,
+      "sheetNote": "Dee"
+    },
+    {
+      "id": "trip-2026-09-29-am",
+      "date": "2026-09-29",
+      "direction": "AM",
+      "time": "7:30 AM",
+      "driverId": "drv-lucas",
+      "riderIds": [
+        "kid-eli",
+        "kid-emily",
+        "kid-blake",
+        "kid-anderson"
+      ],
+      "excludedIds": [],
+      "status": "planned",
+      "noSchool": false,
+      "sheetNote": "Lucas"
+    },
+    {
+      "id": "trip-2026-09-29-pm",
+      "date": "2026-09-29",
+      "direction": "PM",
+      "time": "3:15 PM",
+      "driverId": null,
+      "riderIds": [
+        "kid-eli",
+        "kid-emily",
+        "kid-blake"
+      ],
+      "excludedIds": [
+        "kid-anderson"
+      ],
+      "status": "unassigned",
+      "noSchool": false,
+      "sheetNote": "(No A)"
+    },
+    {
+      "id": "trip-2026-09-30-am",
+      "date": "2026-09-30",
+      "direction": "AM",
+      "time": "7:30 AM",
+      "driverId": "drv-lucas",
+      "riderIds": [
+        "kid-eli",
+        "kid-emily",
+        "kid-blake"
+      ],
+      "excludedIds": [
+        "kid-anderson"
+      ],
+      "status": "planned",
+      "noSchool": false,
+      "sheetNote": "Lucas (No A)"
+    },
+    {
+      "id": "trip-2026-09-30-pm",
+      "date": "2026-09-30",
+      "direction": "PM",
+      "time": "3:15 PM",
+      "driverId": "drv-dee",
+      "riderIds": [
+        "kid-eli",
+        "kid-emily",
+        "kid-blake",
+        "kid-anderson"
+      ],
+      "excludedIds": [],
+      "status": "planned",
+      "noSchool": false,
+      "sheetNote": "Dee"
+    },
+    {
+      "id": "trip-2026-10-01-am",
+      "date": "2026-10-01",
+      "direction": "AM",
+      "time": "7:30 AM",
+      "driverId": "drv-lucas",
+      "riderIds": [
+        "kid-eli",
+        "kid-emily",
+        "kid-blake",
+        "kid-anderson"
+      ],
+      "excludedIds": [],
+      "status": "planned",
+      "noSchool": false,
+      "sheetNote": "Lucas"
+    },
+    {
+      "id": "trip-2026-10-01-pm",
+      "date": "2026-10-01",
+      "direction": "PM",
+      "time": "3:15 PM",
+      "driverId": null,
+      "riderIds": [
+        "kid-eli",
+        "kid-emily",
+        "kid-blake"
+      ],
+      "excludedIds": [
+        "kid-anderson"
+      ],
+      "status": "unassigned",
+      "noSchool": false,
+      "sheetNote": "(No A)"
+    },
+    {
+      "id": "trip-2026-10-02-am",
+      "date": "2026-10-02",
+      "direction": "AM",
+      "time": "7:30 AM",
+      "driverId": "drv-lucas",
+      "riderIds": [
+        "kid-eli",
+        "kid-emily",
+        "kid-blake"
+      ],
+      "excludedIds": [
+        "kid-anderson"
+      ],
+      "status": "planned",
+      "noSchool": false,
+      "sheetNote": "Lucas (No A)"
+    },
+    {
+      "id": "trip-2026-10-02-pm",
+      "date": "2026-10-02",
+      "direction": "PM",
+      "time": "3:15 PM",
+      "driverId": "drv-dee",
+      "riderIds": [
+        "kid-eli",
+        "kid-emily",
+        "kid-blake",
+        "kid-anderson"
+      ],
+      "excludedIds": [],
+      "status": "planned",
+      "noSchool": false,
+      "sheetNote": "Dee"
+    },
+    {
+      "id": "trip-2026-10-05-am",
+      "date": "2026-10-05",
+      "direction": "AM",
+      "time": "7:30 AM",
+      "driverId": "drv-lucas",
+      "riderIds": [
+        "kid-eli",
+        "kid-emily",
+        "kid-blake",
+        "kid-anderson"
+      ],
+      "excludedIds": [],
+      "status": "planned",
+      "noSchool": false,
+      "sheetNote": "Lucas"
+    },
+    {
+      "id": "trip-2026-10-05-pm",
+      "date": "2026-10-05",
+      "direction": "PM",
+      "time": "3:15 PM",
+      "driverId": "drv-dee",
+      "riderIds": [
+        "kid-eli",
+        "kid-emily",
+        "kid-blake",
+        "kid-anderson"
+      ],
+      "excludedIds": [],
+      "status": "planned",
+      "noSchool": false,
+      "sheetNote": "Dee"
+    },
+    {
+      "id": "trip-2026-10-06-am",
+      "date": "2026-10-06",
+      "direction": "AM",
+      "time": "7:30 AM",
+      "driverId": "drv-lucas",
+      "riderIds": [
+        "kid-eli",
+        "kid-emily",
+        "kid-blake",
+        "kid-anderson"
+      ],
+      "excludedIds": [],
+      "status": "planned",
+      "noSchool": false,
+      "sheetNote": "Lucas"
+    },
+    {
+      "id": "trip-2026-10-06-pm",
+      "date": "2026-10-06",
+      "direction": "PM",
+      "time": "3:15 PM",
+      "driverId": null,
+      "riderIds": [
+        "kid-eli",
+        "kid-emily",
+        "kid-blake"
+      ],
+      "excludedIds": [
+        "kid-anderson"
+      ],
+      "status": "unassigned",
+      "noSchool": false,
+      "sheetNote": "(No A)"
+    },
+    {
+      "id": "trip-2026-10-07-am",
+      "date": "2026-10-07",
+      "direction": "AM",
+      "time": "7:30 AM",
+      "driverId": "drv-lucas",
+      "riderIds": [
+        "kid-eli",
+        "kid-emily",
+        "kid-blake"
+      ],
+      "excludedIds": [
+        "kid-anderson"
+      ],
+      "status": "planned",
+      "noSchool": false,
+      "sheetNote": "Lucas (No A)"
+    },
+    {
+      "id": "trip-2026-10-07-pm",
+      "date": "2026-10-07",
+      "direction": "PM",
+      "time": "3:15 PM",
+      "driverId": "drv-dee",
+      "riderIds": [
+        "kid-eli",
+        "kid-emily",
+        "kid-blake",
+        "kid-anderson"
+      ],
+      "excludedIds": [],
+      "status": "planned",
+      "noSchool": false,
+      "sheetNote": "Dee"
+    },
+    {
+      "id": "trip-2026-10-08-am",
+      "date": "2026-10-08",
+      "direction": "AM",
+      "time": "7:30 AM",
+      "driverId": "drv-lucas",
+      "riderIds": [
+        "kid-eli",
+        "kid-emily",
+        "kid-blake",
+        "kid-anderson"
+      ],
+      "excludedIds": [],
+      "status": "planned",
+      "noSchool": false,
+      "sheetNote": "Lucas"
+    },
+    {
+      "id": "trip-2026-10-08-pm",
+      "date": "2026-10-08",
+      "direction": "PM",
+      "time": "3:15 PM",
+      "driverId": null,
+      "riderIds": [
+        "kid-eli",
+        "kid-emily",
+        "kid-blake"
+      ],
+      "excludedIds": [
+        "kid-anderson"
+      ],
+      "status": "unassigned",
+      "noSchool": false,
+      "sheetNote": "(No A)"
+    },
+    {
+      "id": "trip-2026-10-09-am",
+      "date": "2026-10-09",
+      "direction": "AM",
+      "time": "7:30 AM",
+      "driverId": "drv-lucas",
+      "riderIds": [
+        "kid-eli",
+        "kid-emily",
+        "kid-blake"
+      ],
+      "excludedIds": [
+        "kid-anderson"
+      ],
+      "status": "planned",
+      "noSchool": false,
+      "sheetNote": "Lucas (No A)"
+    },
+    {
+      "id": "trip-2026-10-09-pm",
+      "date": "2026-10-09",
+      "direction": "PM",
+      "time": "3:15 PM",
+      "driverId": null,
+      "riderIds": [
+        "kid-eli",
+        "kid-emily",
+        "kid-blake"
+      ],
+      "excludedIds": [
+        "kid-anderson"
+      ],
+      "status": "unassigned",
+      "noSchool": false,
+      "sheetNote": "(No A)"
+    },
+    {
+      "id": "trip-2026-10-12-am",
+      "date": "2026-10-12",
+      "direction": "AM",
+      "time": "7:30 AM",
+      "driverId": "drv-lucas",
+      "riderIds": [
+        "kid-eli",
+        "kid-emily",
+        "kid-blake",
+        "kid-nico"
+      ],
+      "excludedIds": [
+        "kid-anderson"
+      ],
+      "status": "planned",
+      "noSchool": false,
+      "sheetNote": "Lucas Nico (No A)"
+    },
+    {
+      "id": "trip-2026-10-12-pm",
+      "date": "2026-10-12",
+      "direction": "PM",
+      "time": "3:15 PM",
+      "driverId": "drv-dee",
+      "riderIds": [
+        "kid-eli",
+        "kid-emily",
+        "kid-blake",
+        "kid-anderson",
+        "kid-nico"
+      ],
+      "excludedIds": [],
+      "status": "planned",
+      "noSchool": false,
+      "sheetNote": "Dee Blake & Nico"
+    },
+    {
+      "id": "trip-2026-10-13-am",
+      "date": "2026-10-13",
+      "direction": "AM",
+      "time": "7:30 AM",
+      "driverId": "drv-lucas",
+      "riderIds": [
+        "kid-eli",
+        "kid-emily",
+        "kid-blake",
+        "kid-anderson",
+        "kid-nico",
+        "kid-andy"
+      ],
+      "excludedIds": [],
+      "status": "planned",
+      "noSchool": false,
+      "sheetNote": "Lucas Nico & Andy"
+    },
+    {
+      "id": "trip-2026-10-13-pm",
+      "date": "2026-10-13",
+      "direction": "PM",
+      "time": "3:15 PM",
+      "driverId": "drv-lucas",
+      "riderIds": [
+        "kid-eli",
+        "kid-emily",
+        "kid-blake",
+        "kid-nico"
+      ],
+      "excludedIds": [
+        "kid-anderson"
+      ],
+      "status": "planned",
+      "noSchool": false,
+      "sheetNote": "Lucas Nico (No A)"
+    },
+    {
+      "id": "trip-2026-10-14-am",
+      "date": "2026-10-14",
+      "direction": "AM",
+      "time": "7:30 AM",
+      "driverId": "drv-lucas",
+      "riderIds": [
+        "kid-eli",
+        "kid-emily",
+        "kid-blake",
+        "kid-nico"
+      ],
+      "excludedIds": [
+        "kid-anderson"
+      ],
+      "status": "planned",
+      "noSchool": false,
+      "sheetNote": "Lucas Nico (No A)"
+    },
+    {
+      "id": "trip-2026-10-14-pm",
+      "date": "2026-10-14",
+      "direction": "PM",
+      "time": "3:15 PM",
+      "driverId": "drv-dee",
+      "riderIds": [
+        "kid-eli",
+        "kid-emily",
+        "kid-blake",
+        "kid-anderson",
+        "kid-nico"
+      ],
+      "excludedIds": [],
+      "status": "planned",
+      "noSchool": false,
+      "sheetNote": "Dee Blake & Nico"
+    },
+    {
+      "id": "trip-2026-10-15-am",
+      "date": "2026-10-15",
+      "direction": "AM",
+      "time": "7:30 AM",
+      "driverId": "drv-lucas",
+      "riderIds": [
+        "kid-eli",
+        "kid-emily",
+        "kid-blake",
+        "kid-anderson",
+        "kid-nico",
+        "kid-andy"
+      ],
+      "excludedIds": [],
+      "status": "planned",
+      "noSchool": false,
+      "sheetNote": "Lucas Nico & Andy"
+    },
+    {
+      "id": "trip-2026-10-15-pm",
+      "date": "2026-10-15",
+      "direction": "PM",
+      "time": "3:15 PM",
+      "driverId": "drv-nicola",
+      "riderIds": [
+        "kid-eli",
+        "kid-emily",
+        "kid-blake"
+      ],
+      "excludedIds": [
+        "kid-anderson"
+      ],
+      "status": "planned",
+      "noSchool": false,
+      "sheetNote": "Nicola Blake (no A)"
+    },
+    {
+      "id": "trip-2026-10-16-am",
+      "date": "2026-10-16",
+      "direction": "AM",
+      "time": "7:30 AM",
+      "driverId": "drv-lucas",
+      "riderIds": [
+        "kid-eli",
+        "kid-emily",
+        "kid-blake"
+      ],
+      "excludedIds": [
+        "kid-anderson"
+      ],
+      "status": "planned",
+      "noSchool": false,
+      "sheetNote": "Lucas (No A)"
+    },
+    {
+      "id": "trip-2026-10-16-pm",
+      "date": "2026-10-16",
+      "direction": "PM",
+      "time": "3:15 PM",
+      "driverId": "drv-dee",
+      "riderIds": [
+        "kid-eli",
+        "kid-emily",
+        "kid-blake",
+        "kid-anderson"
+      ],
+      "excludedIds": [],
+      "status": "planned",
+      "noSchool": false,
+      "sheetNote": "Dee Blake"
+    },
+    {
+      "id": "trip-2026-10-19-am",
+      "date": "2026-10-19",
+      "direction": "AM",
+      "time": "7:30 AM",
+      "driverId": "drv-lucas",
+      "riderIds": [
+        "kid-eli",
+        "kid-emily",
+        "kid-blake",
+        "kid-anderson"
+      ],
+      "excludedIds": [],
+      "status": "planned",
+      "noSchool": false,
+      "sheetNote": "Lucas"
+    },
+    {
+      "id": "trip-2026-10-19-pm",
+      "date": "2026-10-19",
+      "direction": "PM",
+      "time": "3:15 PM",
+      "driverId": "drv-dee",
+      "riderIds": [
+        "kid-eli",
+        "kid-emily",
+        "kid-blake",
+        "kid-anderson"
+      ],
+      "excludedIds": [],
+      "status": "planned",
+      "noSchool": false,
+      "sheetNote": "Dee"
+    },
+    {
+      "id": "trip-2026-10-20-am",
+      "date": "2026-10-20",
+      "direction": "AM",
+      "time": "7:30 AM",
+      "driverId": "drv-lucas",
+      "riderIds": [
+        "kid-eli",
+        "kid-emily",
+        "kid-blake",
+        "kid-anderson"
+      ],
+      "excludedIds": [],
+      "status": "planned",
+      "noSchool": false,
+      "sheetNote": "Lucas"
+    },
+    {
+      "id": "trip-2026-10-20-pm",
+      "date": "2026-10-20",
+      "direction": "PM",
+      "time": "3:15 PM",
+      "driverId": null,
+      "riderIds": [
+        "kid-eli",
+        "kid-emily",
+        "kid-blake"
+      ],
+      "excludedIds": [
+        "kid-anderson"
+      ],
+      "status": "unassigned",
+      "noSchool": false,
+      "sheetNote": "(No A)"
+    },
+    {
+      "id": "trip-2026-10-21-am",
+      "date": "2026-10-21",
+      "direction": "AM",
+      "time": "7:30 AM",
+      "driverId": "drv-lucas",
+      "riderIds": [
+        "kid-eli",
+        "kid-emily",
+        "kid-blake"
+      ],
+      "excludedIds": [
+        "kid-anderson"
+      ],
+      "status": "planned",
+      "noSchool": false,
+      "sheetNote": "Lucas (No A)"
+    },
+    {
+      "id": "trip-2026-10-21-pm",
+      "date": "2026-10-21",
+      "direction": "PM",
+      "time": "3:15 PM",
+      "driverId": "drv-dee",
+      "riderIds": [
+        "kid-eli",
+        "kid-emily",
+        "kid-blake",
+        "kid-anderson"
+      ],
+      "excludedIds": [],
+      "status": "planned",
+      "noSchool": false,
+      "sheetNote": "Dee"
+    },
+    {
+      "id": "trip-2026-10-22-am",
+      "date": "2026-10-22",
+      "direction": "AM",
+      "time": "7:30 AM",
+      "driverId": "drv-lucas",
+      "riderIds": [
+        "kid-eli",
+        "kid-emily",
+        "kid-blake",
+        "kid-anderson"
+      ],
+      "excludedIds": [],
+      "status": "planned",
+      "noSchool": false,
+      "sheetNote": "Lucas"
+    },
+    {
+      "id": "trip-2026-10-22-pm",
+      "date": "2026-10-22",
+      "direction": "PM",
+      "time": "3:15 PM",
+      "driverId": null,
+      "riderIds": [
+        "kid-eli",
+        "kid-emily",
+        "kid-blake"
+      ],
+      "excludedIds": [
+        "kid-anderson"
+      ],
+      "status": "unassigned",
+      "noSchool": false,
+      "sheetNote": "(No A)"
+    },
+    {
+      "id": "trip-2026-10-23-am",
+      "date": "2026-10-23",
+      "direction": "AM",
+      "time": "7:30 AM",
+      "driverId": null,
+      "riderIds": [],
+      "excludedIds": [],
+      "status": "cancelled",
+      "noSchool": true,
+      "sheetNote": "No School"
+    },
+    {
+      "id": "trip-2026-10-23-pm",
+      "date": "2026-10-23",
+      "direction": "PM",
+      "time": "3:15 PM",
+      "driverId": null,
+      "riderIds": [],
+      "excludedIds": [],
+      "status": "cancelled",
+      "noSchool": true,
+      "sheetNote": "No School"
+    },
+    {
+      "id": "trip-2026-10-26-am",
+      "date": "2026-10-26",
+      "direction": "AM",
+      "time": "7:30 AM",
+      "driverId": "drv-lucas",
+      "riderIds": [
+        "kid-eli",
+        "kid-emily",
+        "kid-blake"
+      ],
+      "excludedIds": [
+        "kid-anderson"
+      ],
+      "status": "planned",
+      "noSchool": false,
+      "sheetNote": "Lucas (no A)"
+    },
+    {
+      "id": "trip-2026-10-26-pm",
+      "date": "2026-10-26",
+      "direction": "PM",
+      "time": "3:15 PM",
+      "driverId": "drv-dee",
+      "riderIds": [
+        "kid-eli",
+        "kid-emily",
+        "kid-blake",
+        "kid-anderson"
+      ],
+      "excludedIds": [],
+      "status": "planned",
+      "noSchool": false,
+      "sheetNote": "Dee"
+    },
+    {
+      "id": "trip-2026-10-27-am",
+      "date": "2026-10-27",
+      "direction": "AM",
+      "time": "7:30 AM",
+      "driverId": "drv-lucas",
+      "riderIds": [
+        "kid-eli",
+        "kid-emily",
+        "kid-blake",
+        "kid-anderson"
+      ],
+      "excludedIds": [],
+      "status": "planned",
+      "noSchool": false,
+      "sheetNote": "Lucas"
+    },
+    {
+      "id": "trip-2026-10-27-pm",
+      "date": "2026-10-27",
+      "direction": "PM",
+      "time": "3:15 PM",
+      "driverId": null,
+      "riderIds": [
+        "kid-eli",
+        "kid-emily",
+        "kid-blake"
+      ],
+      "excludedIds": [
+        "kid-anderson"
+      ],
+      "status": "unassigned",
+      "noSchool": false,
+      "sheetNote": "(No A)"
+    },
+    {
+      "id": "trip-2026-10-28-am",
+      "date": "2026-10-28",
+      "direction": "AM",
+      "time": "7:30 AM",
+      "driverId": "drv-lucas",
+      "riderIds": [
+        "kid-eli",
+        "kid-emily",
+        "kid-blake"
+      ],
+      "excludedIds": [
+        "kid-anderson"
+      ],
+      "status": "planned",
+      "noSchool": false,
+      "sheetNote": "Lucas (No A)"
+    },
+    {
+      "id": "trip-2026-10-28-pm",
+      "date": "2026-10-28",
+      "direction": "PM",
+      "time": "3:15 PM",
+      "driverId": "drv-dee",
+      "riderIds": [
+        "kid-eli",
+        "kid-emily",
+        "kid-blake",
+        "kid-anderson"
+      ],
+      "excludedIds": [],
+      "status": "planned",
+      "noSchool": false,
+      "sheetNote": "Dee"
+    },
+    {
+      "id": "trip-2026-10-29-am",
+      "date": "2026-10-29",
+      "direction": "AM",
+      "time": "7:30 AM",
+      "driverId": "drv-lucas",
+      "riderIds": [
+        "kid-eli",
+        "kid-emily",
+        "kid-blake",
+        "kid-anderson"
+      ],
+      "excludedIds": [],
+      "status": "planned",
+      "noSchool": false,
+      "sheetNote": "Lucas"
+    },
+    {
+      "id": "trip-2026-10-29-pm",
+      "date": "2026-10-29",
+      "direction": "PM",
+      "time": "3:15 PM",
+      "driverId": null,
+      "riderIds": [
+        "kid-eli",
+        "kid-emily",
+        "kid-blake"
+      ],
+      "excludedIds": [
+        "kid-anderson"
+      ],
+      "status": "unassigned",
+      "noSchool": false,
+      "sheetNote": "(No A)"
+    },
+    {
+      "id": "trip-2026-10-30-am",
+      "date": "2026-10-30",
+      "direction": "AM",
+      "time": "7:30 AM",
+      "driverId": "drv-lucas",
+      "riderIds": [
+        "kid-eli",
+        "kid-emily",
+        "kid-blake"
+      ],
+      "excludedIds": [
+        "kid-anderson"
+      ],
+      "status": "planned",
+      "noSchool": false,
+      "sheetNote": "Lucas (No A)"
+    },
+    {
+      "id": "trip-2026-10-30-pm",
+      "date": "2026-10-30",
+      "direction": "PM",
+      "time": "3:15 PM",
+      "driverId": "drv-dee",
+      "riderIds": [
+        "kid-eli",
+        "kid-emily",
+        "kid-blake",
+        "kid-anderson"
+      ],
+      "excludedIds": [],
+      "status": "planned",
+      "noSchool": false,
+      "sheetNote": "Dee"
+    },
+    {
+      "id": "trip-2026-11-02-am",
+      "date": "2026-11-02",
+      "direction": "AM",
+      "time": "7:30 AM",
+      "driverId": null,
+      "riderIds": [],
+      "excludedIds": [],
+      "status": "cancelled",
+      "noSchool": true,
+      "sheetNote": "No School"
+    },
+    {
+      "id": "trip-2026-11-02-pm",
+      "date": "2026-11-02",
+      "direction": "PM",
+      "time": "3:15 PM",
+      "driverId": null,
+      "riderIds": [],
+      "excludedIds": [],
+      "status": "cancelled",
+      "noSchool": true,
+      "sheetNote": "No School"
+    },
+    {
+      "id": "trip-2026-11-03-am",
+      "date": "2026-11-03",
+      "direction": "AM",
+      "time": "7:30 AM",
+      "driverId": null,
+      "riderIds": [],
+      "excludedIds": [],
+      "status": "cancelled",
+      "noSchool": true,
+      "sheetNote": "No School"
+    },
+    {
+      "id": "trip-2026-11-03-pm",
+      "date": "2026-11-03",
+      "direction": "PM",
+      "time": "3:15 PM",
+      "driverId": null,
+      "riderIds": [],
+      "excludedIds": [],
+      "status": "cancelled",
+      "noSchool": true,
+      "sheetNote": "No School"
+    },
+    {
+      "id": "trip-2026-11-04-am",
+      "date": "2026-11-04",
+      "direction": "AM",
+      "time": "7:30 AM",
+      "driverId": "drv-lucas",
+      "riderIds": [
+        "kid-eli",
+        "kid-emily",
+        "kid-blake"
+      ],
+      "excludedIds": [
+        "kid-anderson"
+      ],
+      "status": "planned",
+      "noSchool": false,
+      "sheetNote": "Lucas No A)"
+    },
+    {
+      "id": "trip-2026-11-04-pm",
+      "date": "2026-11-04",
+      "direction": "PM",
+      "time": "3:15 PM",
+      "driverId": "drv-dee",
+      "riderIds": [
+        "kid-eli",
+        "kid-emily",
+        "kid-blake",
+        "kid-anderson"
+      ],
+      "excludedIds": [],
+      "status": "planned",
+      "noSchool": false,
+      "sheetNote": "Dee"
+    },
+    {
+      "id": "trip-2026-11-05-am",
+      "date": "2026-11-05",
+      "direction": "AM",
+      "time": "7:30 AM",
+      "driverId": "drv-lucas",
+      "riderIds": [
+        "kid-eli",
+        "kid-emily",
+        "kid-blake",
+        "kid-anderson"
+      ],
+      "excludedIds": [],
+      "status": "planned",
+      "noSchool": false,
+      "sheetNote": "Lucas"
+    },
+    {
+      "id": "trip-2026-11-05-pm",
+      "date": "2026-11-05",
+      "direction": "PM",
+      "time": "3:15 PM",
+      "driverId": null,
+      "riderIds": [
+        "kid-eli",
+        "kid-emily",
+        "kid-blake"
+      ],
+      "excludedIds": [
+        "kid-anderson"
+      ],
+      "status": "unassigned",
+      "noSchool": false,
+      "sheetNote": "(No A)"
+    },
+    {
+      "id": "trip-2026-11-06-am",
+      "date": "2026-11-06",
+      "direction": "AM",
+      "time": "7:30 AM",
+      "driverId": "drv-lucas",
+      "riderIds": [
+        "kid-eli",
+        "kid-emily",
+        "kid-blake"
+      ],
+      "excludedIds": [
+        "kid-anderson"
+      ],
+      "status": "planned",
+      "noSchool": false,
+      "sheetNote": "Lucas (No A)"
+    },
+    {
+      "id": "trip-2026-11-06-pm",
+      "date": "2026-11-06",
+      "direction": "PM",
+      "time": "3:15 PM",
+      "driverId": null,
+      "riderIds": [
+        "kid-eli",
+        "kid-emily",
+        "kid-blake"
+      ],
+      "excludedIds": [
+        "kid-anderson"
+      ],
+      "status": "unassigned",
+      "noSchool": false,
+      "sheetNote": "(No A)"
+    },
+    {
+      "id": "trip-2026-11-09-am",
+      "date": "2026-11-09",
+      "direction": "AM",
+      "time": "7:30 AM",
+      "driverId": "drv-lucas",
+      "riderIds": [
+        "kid-eli",
+        "kid-emily",
+        "kid-blake"
+      ],
+      "excludedIds": [
+        "kid-anderson"
+      ],
+      "status": "planned",
+      "noSchool": false,
+      "sheetNote": "Lucas (No A)"
+    },
+    {
+      "id": "trip-2026-11-09-pm",
+      "date": "2026-11-09",
+      "direction": "PM",
+      "time": "3:15 PM",
+      "driverId": "drv-dee",
+      "riderIds": [
+        "kid-eli",
+        "kid-emily",
+        "kid-blake",
+        "kid-anderson"
+      ],
+      "excludedIds": [],
+      "status": "planned",
+      "noSchool": false,
+      "sheetNote": "Dee"
+    },
+    {
+      "id": "trip-2026-11-10-am",
+      "date": "2026-11-10",
+      "direction": "AM",
+      "time": "7:30 AM",
+      "driverId": "drv-lucas",
+      "riderIds": [
+        "kid-eli",
+        "kid-emily",
+        "kid-blake",
+        "kid-anderson"
+      ],
+      "excludedIds": [],
+      "status": "planned",
+      "noSchool": false,
+      "sheetNote": "Lucas"
+    },
+    {
+      "id": "trip-2026-11-10-pm",
+      "date": "2026-11-10",
+      "direction": "PM",
+      "time": "3:15 PM",
+      "driverId": null,
+      "riderIds": [
+        "kid-eli",
+        "kid-emily",
+        "kid-blake"
+      ],
+      "excludedIds": [
+        "kid-anderson"
+      ],
+      "status": "unassigned",
+      "noSchool": false,
+      "sheetNote": "(No A)"
+    },
+    {
+      "id": "trip-2026-11-11-am",
+      "date": "2026-11-11",
+      "direction": "AM",
+      "time": "7:30 AM",
+      "driverId": "drv-lucas",
+      "riderIds": [
+        "kid-eli",
+        "kid-emily",
+        "kid-blake"
+      ],
+      "excludedIds": [
+        "kid-anderson"
+      ],
+      "status": "planned",
+      "noSchool": false,
+      "sheetNote": "Lucas (No A)"
+    },
+    {
+      "id": "trip-2026-11-11-pm",
+      "date": "2026-11-11",
+      "direction": "PM",
+      "time": "3:15 PM",
+      "driverId": "drv-dee",
+      "riderIds": [
+        "kid-eli",
+        "kid-emily",
+        "kid-blake",
+        "kid-anderson"
+      ],
+      "excludedIds": [],
+      "status": "planned",
+      "noSchool": false,
+      "sheetNote": "Dee"
+    },
+    {
+      "id": "trip-2026-11-12-am",
+      "date": "2026-11-12",
+      "direction": "AM",
+      "time": "7:30 AM",
+      "driverId": "drv-lucas",
+      "riderIds": [
+        "kid-eli",
+        "kid-emily",
+        "kid-blake",
+        "kid-anderson"
+      ],
+      "excludedIds": [],
+      "status": "planned",
+      "noSchool": false,
+      "sheetNote": "Lucas"
+    },
+    {
+      "id": "trip-2026-11-12-pm",
+      "date": "2026-11-12",
+      "direction": "PM",
+      "time": "3:15 PM",
+      "driverId": null,
+      "riderIds": [
+        "kid-eli",
+        "kid-emily",
+        "kid-blake"
+      ],
+      "excludedIds": [
+        "kid-anderson"
+      ],
+      "status": "unassigned",
+      "noSchool": false,
+      "sheetNote": "(No A)"
+    },
+    {
+      "id": "trip-2026-11-13-am",
+      "date": "2026-11-13",
+      "direction": "AM",
+      "time": "7:30 AM",
+      "driverId": "drv-lucas",
+      "riderIds": [
+        "kid-eli",
+        "kid-emily",
+        "kid-blake"
+      ],
+      "excludedIds": [
+        "kid-anderson"
+      ],
+      "status": "planned",
+      "noSchool": false,
+      "sheetNote": "Lucas (No A)"
+    },
+    {
+      "id": "trip-2026-11-13-pm",
+      "date": "2026-11-13",
+      "direction": "PM",
+      "time": "3:15 PM",
+      "driverId": "drv-dee",
+      "riderIds": [
+        "kid-eli",
+        "kid-emily",
+        "kid-blake",
+        "kid-anderson"
+      ],
+      "excludedIds": [],
+      "status": "planned",
+      "noSchool": false,
+      "sheetNote": "Dee"
+    },
+    {
+      "id": "trip-2026-11-16-am",
+      "date": "2026-11-16",
+      "direction": "AM",
+      "time": "7:30 AM",
+      "driverId": "drv-lucas",
+      "riderIds": [
+        "kid-eli",
+        "kid-emily",
+        "kid-blake",
+        "kid-anderson"
+      ],
+      "excludedIds": [],
+      "status": "planned",
+      "noSchool": false,
+      "sheetNote": "Lucas"
+    },
+    {
+      "id": "trip-2026-11-16-pm",
+      "date": "2026-11-16",
+      "direction": "PM",
+      "time": "3:15 PM",
+      "driverId": "drv-dee",
+      "riderIds": [
+        "kid-eli",
+        "kid-emily",
+        "kid-blake",
+        "kid-anderson"
+      ],
+      "excludedIds": [],
+      "status": "planned",
+      "noSchool": false,
+      "sheetNote": "Dee"
+    },
+    {
+      "id": "trip-2026-11-17-am",
+      "date": "2026-11-17",
+      "direction": "AM",
+      "time": "7:30 AM",
+      "driverId": "drv-lucas",
+      "riderIds": [
+        "kid-eli",
+        "kid-emily",
+        "kid-blake",
+        "kid-anderson"
+      ],
+      "excludedIds": [],
+      "status": "planned",
+      "noSchool": false,
+      "sheetNote": "Lucas"
+    },
+    {
+      "id": "trip-2026-11-17-pm",
+      "date": "2026-11-17",
+      "direction": "PM",
+      "time": "3:15 PM",
+      "driverId": null,
+      "riderIds": [
+        "kid-eli",
+        "kid-emily",
+        "kid-blake"
+      ],
+      "excludedIds": [
+        "kid-anderson"
+      ],
+      "status": "unassigned",
+      "noSchool": false,
+      "sheetNote": "(No A)"
+    },
+    {
+      "id": "trip-2026-11-18-am",
+      "date": "2026-11-18",
+      "direction": "AM",
+      "time": "7:30 AM",
+      "driverId": "drv-lucas",
+      "riderIds": [
+        "kid-eli",
+        "kid-emily",
+        "kid-blake"
+      ],
+      "excludedIds": [
+        "kid-anderson"
+      ],
+      "status": "planned",
+      "noSchool": false,
+      "sheetNote": "Lucas (No A)"
+    },
+    {
+      "id": "trip-2026-11-18-pm",
+      "date": "2026-11-18",
+      "direction": "PM",
+      "time": "3:15 PM",
+      "driverId": "drv-dee",
+      "riderIds": [
+        "kid-eli",
+        "kid-emily",
+        "kid-blake",
+        "kid-anderson"
+      ],
+      "excludedIds": [],
+      "status": "planned",
+      "noSchool": false,
+      "sheetNote": "Dee"
+    },
+    {
+      "id": "trip-2026-11-19-am",
+      "date": "2026-11-19",
+      "direction": "AM",
+      "time": "7:30 AM",
+      "driverId": "drv-lucas",
+      "riderIds": [
+        "kid-eli",
+        "kid-emily",
+        "kid-blake",
+        "kid-anderson"
+      ],
+      "excludedIds": [],
+      "status": "planned",
+      "noSchool": false,
+      "sheetNote": "Lucas"
+    },
+    {
+      "id": "trip-2026-11-19-pm",
+      "date": "2026-11-19",
+      "direction": "PM",
+      "time": "3:15 PM",
+      "driverId": null,
+      "riderIds": [
+        "kid-eli",
+        "kid-emily",
+        "kid-blake"
+      ],
+      "excludedIds": [
+        "kid-anderson"
+      ],
+      "status": "unassigned",
+      "noSchool": false,
+      "sheetNote": "(No A)"
+    },
+    {
+      "id": "trip-2026-11-20-am",
+      "date": "2026-11-20",
+      "direction": "AM",
+      "time": "7:30 AM",
+      "driverId": "drv-lucas",
+      "riderIds": [
+        "kid-eli",
+        "kid-emily",
+        "kid-blake"
+      ],
+      "excludedIds": [
+        "kid-anderson"
+      ],
+      "status": "planned",
+      "noSchool": false,
+      "sheetNote": "Lucas (No A)"
+    },
+    {
+      "id": "trip-2026-11-20-pm",
+      "date": "2026-11-20",
+      "direction": "PM",
+      "time": "3:15 PM",
+      "driverId": null,
+      "riderIds": [
+        "kid-eli",
+        "kid-emily",
+        "kid-blake"
+      ],
+      "excludedIds": [
+        "kid-anderson"
+      ],
+      "status": "unassigned",
+      "noSchool": false,
+      "sheetNote": "(No A)"
+    },
+    {
+      "id": "trip-2026-11-23-am",
+      "date": "2026-11-23",
+      "direction": "AM",
+      "time": "7:30 AM",
+      "driverId": "drv-lucas",
+      "riderIds": [
+        "kid-eli",
+        "kid-emily",
+        "kid-blake"
+      ],
+      "excludedIds": [
+        "kid-anderson"
+      ],
+      "status": "planned",
+      "noSchool": false,
+      "sheetNote": "Lucas (No A)"
+    },
+    {
+      "id": "trip-2026-11-23-pm",
+      "date": "2026-11-23",
+      "direction": "PM",
+      "time": "3:15 PM",
+      "driverId": "drv-dee",
+      "riderIds": [
+        "kid-eli",
+        "kid-emily",
+        "kid-blake",
+        "kid-anderson"
+      ],
+      "excludedIds": [],
+      "status": "planned",
+      "noSchool": false,
+      "sheetNote": "Dee"
+    },
+    {
+      "id": "trip-2026-11-24-am",
+      "date": "2026-11-24",
+      "direction": "AM",
+      "time": "7:30 AM",
+      "driverId": "drv-lucas",
+      "riderIds": [
+        "kid-eli",
+        "kid-emily",
+        "kid-blake",
+        "kid-anderson"
+      ],
+      "excludedIds": [],
+      "status": "planned",
+      "noSchool": false,
+      "sheetNote": "Lucas"
+    },
+    {
+      "id": "trip-2026-11-24-pm",
+      "date": "2026-11-24",
+      "direction": "PM",
+      "time": "3:15 PM",
+      "driverId": null,
+      "riderIds": [
+        "kid-eli",
+        "kid-emily",
+        "kid-blake"
+      ],
+      "excludedIds": [
+        "kid-anderson"
+      ],
+      "status": "unassigned",
+      "noSchool": false,
+      "sheetNote": "(No A)"
+    },
+    {
+      "id": "trip-2026-11-25-am",
+      "date": "2026-11-25",
+      "direction": "AM",
+      "time": "7:30 AM",
+      "driverId": null,
+      "riderIds": [],
+      "excludedIds": [],
+      "status": "cancelled",
+      "noSchool": true,
+      "sheetNote": "No School"
+    },
+    {
+      "id": "trip-2026-11-25-pm",
+      "date": "2026-11-25",
+      "direction": "PM",
+      "time": "3:15 PM",
+      "driverId": null,
+      "riderIds": [],
+      "excludedIds": [],
+      "status": "cancelled",
+      "noSchool": true,
+      "sheetNote": "No School"
+    },
+    {
+      "id": "trip-2026-11-26-am",
+      "date": "2026-11-26",
+      "direction": "AM",
+      "time": "7:30 AM",
+      "driverId": null,
+      "riderIds": [],
+      "excludedIds": [],
+      "status": "cancelled",
+      "noSchool": true,
+      "sheetNote": "No School"
+    },
+    {
+      "id": "trip-2026-11-26-pm",
+      "date": "2026-11-26",
+      "direction": "PM",
+      "time": "3:15 PM",
+      "driverId": null,
+      "riderIds": [],
+      "excludedIds": [],
+      "status": "cancelled",
+      "noSchool": true,
+      "sheetNote": "No School"
+    },
+    {
+      "id": "trip-2026-11-27-am",
+      "date": "2026-11-27",
+      "direction": "AM",
+      "time": "7:30 AM",
+      "driverId": null,
+      "riderIds": [],
+      "excludedIds": [],
+      "status": "cancelled",
+      "noSchool": true,
+      "sheetNote": "No School"
+    },
+    {
+      "id": "trip-2026-11-27-pm",
+      "date": "2026-11-27",
+      "direction": "PM",
+      "time": "3:15 PM",
+      "driverId": null,
+      "riderIds": [],
+      "excludedIds": [],
+      "status": "cancelled",
+      "noSchool": true,
+      "sheetNote": "No School"
+    },
+    {
+      "id": "trip-2026-11-30-am",
+      "date": "2026-11-30",
+      "direction": "AM",
+      "time": "7:30 AM",
+      "driverId": "drv-lucas",
+      "riderIds": [
+        "kid-eli",
+        "kid-emily",
+        "kid-blake"
+      ],
+      "excludedIds": [
+        "kid-anderson"
+      ],
+      "status": "planned",
+      "noSchool": false,
+      "sheetNote": "Lucas (No A)"
+    },
+    {
+      "id": "trip-2026-11-30-pm",
+      "date": "2026-11-30",
+      "direction": "PM",
+      "time": "3:15 PM",
+      "driverId": "drv-dee",
+      "riderIds": [
+        "kid-eli",
+        "kid-emily",
+        "kid-blake",
+        "kid-anderson"
+      ],
+      "excludedIds": [],
+      "status": "planned",
+      "noSchool": false,
+      "sheetNote": "Dee"
+    },
+    {
+      "id": "trip-2026-12-01-am",
+      "date": "2026-12-01",
+      "direction": "AM",
+      "time": "7:30 AM",
+      "driverId": "drv-lucas",
+      "riderIds": [
+        "kid-eli",
+        "kid-emily",
+        "kid-blake",
+        "kid-anderson"
+      ],
+      "excludedIds": [],
+      "status": "planned",
+      "noSchool": false,
+      "sheetNote": "Lucas"
+    },
+    {
+      "id": "trip-2026-12-01-pm",
+      "date": "2026-12-01",
+      "direction": "PM",
+      "time": "3:15 PM",
+      "driverId": null,
+      "riderIds": [
+        "kid-eli",
+        "kid-emily",
+        "kid-blake"
+      ],
+      "excludedIds": [
+        "kid-anderson"
+      ],
+      "status": "unassigned",
+      "noSchool": false,
+      "sheetNote": "(No A)"
+    },
+    {
+      "id": "trip-2026-12-02-am",
+      "date": "2026-12-02",
+      "direction": "AM",
+      "time": "7:30 AM",
+      "driverId": "drv-lucas",
+      "riderIds": [
+        "kid-eli",
+        "kid-emily",
+        "kid-blake"
+      ],
+      "excludedIds": [
+        "kid-anderson"
+      ],
+      "status": "planned",
+      "noSchool": false,
+      "sheetNote": "Lucas (No A)"
+    },
+    {
+      "id": "trip-2026-12-02-pm",
+      "date": "2026-12-02",
+      "direction": "PM",
+      "time": "3:15 PM",
+      "driverId": "drv-dee",
+      "riderIds": [
+        "kid-eli",
+        "kid-emily",
+        "kid-blake",
+        "kid-anderson"
+      ],
+      "excludedIds": [],
+      "status": "planned",
+      "noSchool": false,
+      "sheetNote": "Dee"
+    },
+    {
+      "id": "trip-2026-12-03-am",
+      "date": "2026-12-03",
+      "direction": "AM",
+      "time": "7:30 AM",
+      "driverId": "drv-lucas",
+      "riderIds": [
+        "kid-eli",
+        "kid-emily",
+        "kid-blake",
+        "kid-anderson"
+      ],
+      "excludedIds": [],
+      "status": "planned",
+      "noSchool": false,
+      "sheetNote": "Lucas"
+    },
+    {
+      "id": "trip-2026-12-03-pm",
+      "date": "2026-12-03",
+      "direction": "PM",
+      "time": "3:15 PM",
+      "driverId": null,
+      "riderIds": [
+        "kid-eli",
+        "kid-emily",
+        "kid-blake"
+      ],
+      "excludedIds": [
+        "kid-anderson"
+      ],
+      "status": "unassigned",
+      "noSchool": false,
+      "sheetNote": "(No A)"
+    },
+    {
+      "id": "trip-2026-12-04-am",
+      "date": "2026-12-04",
+      "direction": "AM",
+      "time": "7:30 AM",
+      "driverId": "drv-lucas",
+      "riderIds": [
+        "kid-eli",
+        "kid-emily",
+        "kid-blake"
+      ],
+      "excludedIds": [
+        "kid-anderson"
+      ],
+      "status": "planned",
+      "noSchool": false,
+      "sheetNote": "Lucas (No A)"
+    },
+    {
+      "id": "trip-2026-12-04-pm",
+      "date": "2026-12-04",
+      "direction": "PM",
+      "time": "3:15 PM",
+      "driverId": null,
+      "riderIds": [
+        "kid-eli",
+        "kid-emily",
+        "kid-blake"
+      ],
+      "excludedIds": [
+        "kid-anderson"
+      ],
+      "status": "unassigned",
+      "noSchool": false,
+      "sheetNote": "(No A)"
+    },
+    {
+      "id": "trip-2026-12-07-am",
+      "date": "2026-12-07",
+      "direction": "AM",
+      "time": "7:30 AM",
+      "driverId": "drv-lucas",
+      "riderIds": [
+        "kid-eli",
+        "kid-emily",
+        "kid-blake"
+      ],
+      "excludedIds": [
+        "kid-anderson"
+      ],
+      "status": "planned",
+      "noSchool": false,
+      "sheetNote": "Lucas (No A)"
+    },
+    {
+      "id": "trip-2026-12-07-pm",
+      "date": "2026-12-07",
+      "direction": "PM",
+      "time": "3:15 PM",
+      "driverId": "drv-dee",
+      "riderIds": [
+        "kid-eli",
+        "kid-emily",
+        "kid-blake",
+        "kid-anderson"
+      ],
+      "excludedIds": [],
+      "status": "planned",
+      "noSchool": false,
+      "sheetNote": "Dee"
+    },
+    {
+      "id": "trip-2026-12-08-am",
+      "date": "2026-12-08",
+      "direction": "AM",
+      "time": "7:30 AM",
+      "driverId": "drv-lucas",
+      "riderIds": [
+        "kid-eli",
+        "kid-emily",
+        "kid-blake",
+        "kid-anderson"
+      ],
+      "excludedIds": [],
+      "status": "planned",
+      "noSchool": false,
+      "sheetNote": "Lucas"
+    },
+    {
+      "id": "trip-2026-12-08-pm",
+      "date": "2026-12-08",
+      "direction": "PM",
+      "time": "3:15 PM",
+      "driverId": null,
+      "riderIds": [
+        "kid-eli",
+        "kid-emily",
+        "kid-blake"
+      ],
+      "excludedIds": [
+        "kid-anderson"
+      ],
+      "status": "unassigned",
+      "noSchool": false,
+      "sheetNote": "(No A)"
+    },
+    {
+      "id": "trip-2026-12-09-am",
+      "date": "2026-12-09",
+      "direction": "AM",
+      "time": "7:30 AM",
+      "driverId": "drv-lucas",
+      "riderIds": [
+        "kid-eli",
+        "kid-emily",
+        "kid-blake"
+      ],
+      "excludedIds": [
+        "kid-anderson"
+      ],
+      "status": "planned",
+      "noSchool": false,
+      "sheetNote": "Lucas (No A)"
+    },
+    {
+      "id": "trip-2026-12-09-pm",
+      "date": "2026-12-09",
+      "direction": "PM",
+      "time": "3:15 PM",
+      "driverId": "drv-dee",
+      "riderIds": [
+        "kid-eli",
+        "kid-emily",
+        "kid-blake",
+        "kid-anderson"
+      ],
+      "excludedIds": [],
+      "status": "planned",
+      "noSchool": false,
+      "sheetNote": "Dee"
+    },
+    {
+      "id": "trip-2026-12-10-am",
+      "date": "2026-12-10",
+      "direction": "AM",
+      "time": "7:30 AM",
+      "driverId": "drv-lucas",
+      "riderIds": [
+        "kid-eli",
+        "kid-emily",
+        "kid-blake",
+        "kid-anderson"
+      ],
+      "excludedIds": [],
+      "status": "planned",
+      "noSchool": false,
+      "sheetNote": "Lucas"
+    },
+    {
+      "id": "trip-2026-12-10-pm",
+      "date": "2026-12-10",
+      "direction": "PM",
+      "time": "3:15 PM",
+      "driverId": "drv-lucas",
+      "riderIds": [
+        "kid-eli",
+        "kid-emily",
+        "kid-blake"
+      ],
+      "excludedIds": [
+        "kid-anderson"
+      ],
+      "status": "planned",
+      "noSchool": false,
+      "sheetNote": "Lucas (No A)"
+    },
+    {
+      "id": "trip-2026-12-11-am",
+      "date": "2026-12-11",
+      "direction": "AM",
+      "time": "7:30 AM",
+      "driverId": "drv-lucas",
+      "riderIds": [
+        "kid-eli",
+        "kid-emily",
+        "kid-blake"
+      ],
+      "excludedIds": [
+        "kid-anderson"
+      ],
+      "status": "planned",
+      "noSchool": false,
+      "sheetNote": "Lucas (No A)"
+    },
+    {
+      "id": "trip-2026-12-11-pm",
+      "date": "2026-12-11",
+      "direction": "PM",
+      "time": "3:15 PM",
+      "driverId": "drv-dee",
+      "riderIds": [
+        "kid-eli",
+        "kid-emily",
+        "kid-blake",
+        "kid-anderson"
+      ],
+      "excludedIds": [],
+      "status": "planned",
+      "noSchool": false,
+      "sheetNote": "Dee"
+    },
+    {
+      "id": "trip-2026-12-14-am",
+      "date": "2026-12-14",
+      "direction": "AM",
+      "time": "7:30 AM",
+      "driverId": "drv-lucas",
+      "riderIds": [
+        "kid-eli",
+        "kid-emily",
+        "kid-blake",
+        "kid-anderson"
+      ],
+      "excludedIds": [],
+      "status": "planned",
+      "noSchool": false,
+      "sheetNote": "Lucas"
+    },
+    {
+      "id": "trip-2026-12-14-pm",
+      "date": "2026-12-14",
+      "direction": "PM",
+      "time": "3:15 PM",
+      "driverId": "drv-dee",
+      "riderIds": [
+        "kid-eli",
+        "kid-emily",
+        "kid-blake",
+        "kid-anderson"
+      ],
+      "excludedIds": [],
+      "status": "planned",
+      "noSchool": false,
+      "sheetNote": "Dee"
+    },
+    {
+      "id": "trip-2026-12-15-am",
+      "date": "2026-12-15",
+      "direction": "AM",
+      "time": "7:30 AM",
+      "driverId": "drv-lucas",
+      "riderIds": [
+        "kid-eli",
+        "kid-emily",
+        "kid-blake",
+        "kid-anderson"
+      ],
+      "excludedIds": [],
+      "status": "planned",
+      "noSchool": false,
+      "sheetNote": "Lucas"
+    },
+    {
+      "id": "trip-2026-12-15-pm",
+      "date": "2026-12-15",
+      "direction": "PM",
+      "time": "3:15 PM",
+      "driverId": null,
+      "riderIds": [
+        "kid-eli",
+        "kid-emily",
+        "kid-blake"
+      ],
+      "excludedIds": [
+        "kid-anderson"
+      ],
+      "status": "unassigned",
+      "noSchool": false,
+      "sheetNote": "(No A)"
+    },
+    {
+      "id": "trip-2026-12-16-am",
+      "date": "2026-12-16",
+      "direction": "AM",
+      "time": "7:30 AM",
+      "driverId": "drv-lucas",
+      "riderIds": [
+        "kid-eli",
+        "kid-emily",
+        "kid-blake"
+      ],
+      "excludedIds": [
+        "kid-anderson"
+      ],
+      "status": "planned",
+      "noSchool": false,
+      "sheetNote": "Lucas (No A)"
+    },
+    {
+      "id": "trip-2026-12-16-pm",
+      "date": "2026-12-16",
+      "direction": "PM",
+      "time": "3:15 PM",
+      "driverId": "drv-dee",
+      "riderIds": [
+        "kid-eli",
+        "kid-emily",
+        "kid-blake",
+        "kid-anderson"
+      ],
+      "excludedIds": [],
+      "status": "planned",
+      "noSchool": false,
+      "sheetNote": "Dee"
+    },
+    {
+      "id": "trip-2026-12-17-am",
+      "date": "2026-12-17",
+      "direction": "AM",
+      "time": "7:30 AM",
+      "driverId": "drv-lucas",
+      "riderIds": [
+        "kid-eli",
+        "kid-emily",
+        "kid-blake",
+        "kid-anderson"
+      ],
+      "excludedIds": [],
+      "status": "planned",
+      "noSchool": false,
+      "sheetNote": "Lucas"
+    },
+    {
+      "id": "trip-2026-12-17-pm",
+      "date": "2026-12-17",
+      "direction": "PM",
+      "time": "3:15 PM",
+      "driverId": "drv-lucas",
+      "riderIds": [
+        "kid-eli",
+        "kid-emily",
+        "kid-blake"
+      ],
+      "excludedIds": [
+        "kid-anderson"
+      ],
+      "status": "planned",
+      "noSchool": false,
+      "sheetNote": "Lucas (No A)"
+    },
+    {
+      "id": "trip-2026-12-18-am",
+      "date": "2026-12-18",
+      "direction": "AM",
+      "time": "7:30 AM",
+      "driverId": null,
+      "riderIds": [
+        "kid-eli",
+        "kid-emily",
+        "kid-blake"
+      ],
+      "excludedIds": [
+        "kid-anderson"
+      ],
+      "status": "unassigned",
+      "noSchool": false,
+      "sheetNote": "(No A)"
+    },
+    {
+      "id": "trip-2026-12-18-pm",
+      "date": "2026-12-18",
+      "direction": "PM",
+      "time": "3:15 PM",
+      "driverId": null,
+      "riderIds": [
+        "kid-eli",
+        "kid-emily",
+        "kid-blake"
+      ],
+      "excludedIds": [
+        "kid-anderson"
+      ],
+      "status": "unassigned",
+      "noSchool": false,
+      "sheetNote": "(No A)"
+    }
+  ]
+}
